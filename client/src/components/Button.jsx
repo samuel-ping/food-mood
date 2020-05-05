@@ -14,9 +14,9 @@ class Button extends Component {
   render() {
     return (
       <div className="button">
-        {this.props.buttonText}
         {this.props.isGetStarted ? <ArrowIcon /> : ""}
         {this.props.isImage ? <ImageIcon /> : ""}
+        {this.props.buttonText}
       </div>
     );
   }

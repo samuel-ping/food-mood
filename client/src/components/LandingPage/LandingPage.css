@@ -1,6 +1,6 @@
 .landing {
   overflow: hidden;
-  background-image: url(../assets/pasta-background.jpg);
+  background-image: url(../../assets/pasta-background.jpg);
   height: 100vh;
   background-position: center;
   background-size: cover;
@@ -8,8 +8,16 @@
   box-shadow: inset 0px 0px 40vh #000000;
 }
 
+.logo-wrapper {
+  margin-top: 20vh;
+}
+.description-wrapper {
+  margin: 0 4vw;
+}
 .button-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+  margin-top: 8vh;
 }

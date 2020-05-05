@@ -1,0 +1,24 @@
+.input-page-wrapper {
+  background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+  font-family: Roboto, sans-serif;
+  height: 100vh;
+  display: flex;
+  overflow: hidden;
+  text-align: center;
+}
+
+.description-wrapper-2 {
+  margin-top: 20vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.button-wrapper-2 {
+  margin-top: 10vh;
+  margin-left: 35vw;
+  margin-right: 35vw;
+}
+
+input[type="file"] {
+  display: none;
+}

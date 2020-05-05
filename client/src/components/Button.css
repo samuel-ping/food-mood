@@ -1,0 +1,20 @@
+.button {
+  display: flex;
+  align-items: center;
+  border-style: solid;
+  border-color: #ffffff;
+  border-width: 5px;
+  font-family: Roboto, sans-serif;
+  font-size: 2.1em;
+  font-weight: 1000;
+  margin-top: 8vh;
+  padding: 1em 2em;
+  transition-duration: 0.2s;
+  background-color: #ffffff;
+  mix-blend-mode: screen;
+}
+
+.button:hover {
+  color: #ffffff;
+  background-color: transparent;
+}

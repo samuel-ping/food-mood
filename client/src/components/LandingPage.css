@@ -1,0 +1,15 @@
+.landing {
+  overflow: hidden;
+  background-image: url(../assets/pasta-background.jpg);
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: inset 0px 0px 40vh #000000;
+}
+
+.button-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

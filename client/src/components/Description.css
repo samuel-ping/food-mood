@@ -1,0 +1,15 @@
+.description-wrapper {
+  color: #ffffff;
+  font-family: Roboto, sans-serif;
+  font-size: 1.4em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0 4vw;
+  transition-duration: 0.2s;
+}
+
+.description-wrapper:hover {
+  text-shadow: 0.1em 0.1em black;
+}

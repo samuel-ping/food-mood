@@ -1,3 +1,6 @@
+# General
+.env
+
 # Client
 ## dependencies
 /client/node_modules

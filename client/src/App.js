@@ -17,9 +17,13 @@ class App extends Component {
     this.handleDataRetrieval = this.handleDataRetrieval.bind(this);
   }
   // When the data from backend is retrieved, it is sent to this component and this method sets the state to the data.
+  // resultsData: {
+  //   mood:
+  //   restaurantName:
+  // }
   handleDataRetrieval(resultsData) {
     this.setState({ resultsData: resultsData });
-    console.log(this.state.resultsData);
+    console.log("RESULTSDATA@APP.js:", this.state.resultsData);
     history.push(`/results`);
   }
 
@@ -31,7 +35,7 @@ class App extends Component {
             <Route path="/input-photo">
               <InputPage onDataRetrieval={this.handleDataRetrieval} />
             </Route>
-            <Route exact path="/results">
+            <Route path="/results">
               <ResultsPage resultsData={this.state.resultsData} />
             </Route>
             <Route path="/">

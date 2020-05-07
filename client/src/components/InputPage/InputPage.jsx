@@ -35,20 +35,12 @@ class InputPage extends Component {
     }
   }
 
-  componentDidUpdate(prevState) {
-    if (this.state.image !== prevState.image) {
-      console.log("IMAGE CHANGED GJIERJREG", this.state.image);
-    }
-  }
-
   handleFileChange(image, testtext) {
     this.setState({ image: image });
   }
 
   handleSubmit(resultsData) {
-    console.log(resultsData);
-    this.setState({ resultsData: resultsData });
-
+    // this.setState({ resultsData: resultsData });
     this.props.onDataRetrieval(resultsData);
   }
 

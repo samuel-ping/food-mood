@@ -1,0 +1,31 @@
+.mood-bar-wrapper {
+  width: 100%;
+
+  background-color: rgba(255, 255, 255, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#mood-bar-text {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+  font-family: "Roboto", sans-serif;
+  font-weight: bolder;
+  font-size: 1.5em;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+}
+
+#mood-text-1 {
+  padding-right: 0.5em;
+}
+
+#mood-text-2 {
+  font-size: 2em;
+}

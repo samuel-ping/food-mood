@@ -2,6 +2,9 @@
 
 ## [Unreleased]
 
+- Load background images before page loads
+- Add map- react-leaflet?
+- Fix each child in a list should have unique key prop warning on results page
 - Show loading icon while waiting for post response
 - Add loading icon while post request happens- use react-spinners?
 - Integrate react-dropzone for photo input?
@@ -11,10 +14,11 @@
 - Convert knockout text to svg
 - Code split backend- Its not clear how to do that from some brief searches
 
-[0.7.1] - 2020-05-07
+[1.0.0] - 2020-05-07
 
 ## Added
 
+- Finished base code, works as expected. Needs lots of fine tuning.
 - FINALLY YES IT REDIRECTS TO RESULTS AFTER SUBMISSION HALLELUJAH
 
 ## Changed

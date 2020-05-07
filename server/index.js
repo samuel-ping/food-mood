@@ -91,15 +91,14 @@ app.post("/api/upload", (req, res) => {
         })
         .then((response) => {
           // Retrieves the top result restaurant's name.
-          const restaurantName = JSON.stringify(
-            response.jsonBody.businesses[0].name
+          const restaurantData = JSON.parse(
+            JSON.stringify(response.jsonBody.businesses[0])
           );
-
           const returnData = {
-            restaurantName: restaurantName,
+            restaurantName: restaurantData.name,
+            restaurantLocation: restaurantData.location,
             mood: finalEmotion,
           };
-
           res.json(returnData);
         })
         .catch((e) => {

@@ -38,8 +38,8 @@ class SubmitImageButton extends Component {
           const returnToParentData = {
             mood: returnJSON.data.mood,
             restaurantName: returnJSON.data.restaurantName,
+            restaurantLocation: returnJSON.data.restaurantLocation,
           };
-          console.log("returning data to parent"); // for testing
           this.props.onSubmit(returnToParentData);
         })
         .catch((error) => {

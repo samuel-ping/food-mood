@@ -1,0 +1,21 @@
+#restaurant-list-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding-top: 4vh;
+  padding-bottom: 4vh;
+  text-align: center;
+  color: white;
+  font-family: Roboto, sans-serif;
+  font-size: 1em;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+#list-title {
+  font-size: 1.5em;
+}
+
+#restaurant-suggestion {
+  font-size: 2em;
+  font-weight: bolder;
+  margin-top: 2vh;
+}

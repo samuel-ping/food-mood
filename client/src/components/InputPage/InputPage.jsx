@@ -10,11 +10,8 @@ class InputPage extends Component {
     super(props);
     this.state = {
       image: null,
-      encodedImage: null,
       longitude: null,
       latitude: null,
-      mood: undefined,
-      restaurantName: undefined,
     };
     this.handleFileChange = this.handleFileChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -42,9 +39,6 @@ class InputPage extends Component {
     if (this.state.image !== prevState.image) {
       console.log("IMAGE CHANGED GJIERJREG", this.state.image);
     }
-    if (this.state.mood !== prevState.mood) {
-      console.log("mood is now", this.state.mood);
-    }
   }
 
   handleFileChange(image, testtext) {
@@ -53,6 +47,8 @@ class InputPage extends Component {
 
   handleSubmit(resultsData) {
     console.log(resultsData);
+    this.setState({ resultsData: resultsData });
+
     this.props.onDataRetrieval(resultsData);
   }
 

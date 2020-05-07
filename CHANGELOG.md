@@ -8,8 +8,13 @@
 - Animated transitions (https://reacttraining.com/react-router/web/example/animated-transitions)
 - Must check a file is loaded before user presses submit button- deactivate the submit button until image is uploaded or something
 - Convert knockout text to svg
+- Code split backend- Its not clear how to do that from some brief searches
 
-[0.6.0] - 2020-05-07
+[0.7.0] - 2020-05-07
+
+## Added
+
+- FINALLY YES IT REDIRECTS TO RESULTS AFTER SUBMISSION HALLELUJAH
 
 ## Changed
 

@@ -1,41 +1,48 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Router, Switch, Route, Redirect, withRouter } from "react-router-dom";
+import { createBrowserHistory } from "history";
+
 import LandingPage from "./components/LandingPage/LandingPage";
 import InputPage from "./components/InputPage/InputPage";
 import ResultsPage from "./components/ResultsPage/ResultsPage";
+
+const history = createBrowserHistory();
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       resultsData: null,
+      redirectToResults: false,
     };
     this.handleDataRetrieval = this.handleDataRetrieval.bind(this);
   }
-
+  // When the data from backend is retrieved, it is sent to this component and this method sets the state to the data.
   handleDataRetrieval(resultsData) {
-    console.log("received data from child component");
-    this.setState({ resultsData: resultsData });
+    this.setState({ resultsData: resultsData, redirectToResults: true });
     console.log(this.state.resultsData);
+    history.push(`/results`);
   }
 
   render() {
     return (
-      <Router>
-        <Switch>
-          <Route path="/input-photo">
-            <InputPage onDataRetrieval={this.handleDataRetrieval} />
-          </Route>
-          <Route path="/results">
-            <ResultsPage resultsData={this.state.resultsData} />
-          </Route>
-          <Route path="/">
-            <LandingPage />
-          </Route>
-        </Switch>
-      </Router>
+      <div>
+        <Router history={history}>
+          <Switch>
+            <Route path="/input-photo">
+              <InputPage onDataRetrieval={this.handleDataRetrieval} />
+            </Route>
+            <Route exact path="/results">
+              <ResultsPage resultsData={this.state.resultsData} />
+            </Route>
+            <Route path="/">
+              <LandingPage />
+            </Route>
+          </Switch>
+        </Router>
+      </div>
     );
   }
 }
 
-export default App;
+export default withRouter(App);

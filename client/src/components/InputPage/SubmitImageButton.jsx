@@ -5,13 +5,13 @@ import Button from "../Button";
 class SubmitImageButton extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = { encodedImage: null };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    console.log("click handler triggered");
+    console.log("submit handler triggered");
 
     const image = this.props.image;
 
@@ -62,12 +62,10 @@ class SubmitImageButton extends Component {
   render() {
     return (
       <div>
-        <form onClick={this.handleSubmit}>
-          <label htmlFor="photo-upload">
-            <Button buttonText="Get a restaurant suggestion!" />
-          </label>
-          <input id="photo-upload" type="button" />
-        </form>
+        <label onClick={this.handleSubmit} htmlFor="photo-upload">
+          <Button buttonText="Get a restaurant suggestion!" />
+        </label>
+        <input id="photo-upload" type="button" />
       </div>
     );
   }

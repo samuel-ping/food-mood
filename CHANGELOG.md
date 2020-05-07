@@ -3,6 +3,16 @@
 ## [Unreleased]
 
 - Integrate react-dropzone for photo input?
+- Make it more obvious when a photo has been chosen- preview image
+- Animated transitions (https://reacttraining.com/react-router/web/example/animated-transitions)
+- Must check a file is loaded before user presses submit button- deactivate the submit button until image is uploaded or something
+- Convert knockout text to svg
+
+[0.5.0] - 2020-05-06
+
+## Added
+
+- Backend is up and running
 
 [0.4.0] - 2020-05-05
 

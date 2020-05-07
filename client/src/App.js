@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Router, Switch, Route, Redirect, withRouter } from "react-router-dom";
+import { Router, Switch, Route } from "react-router-dom";
 import { createBrowserHistory } from "history";
 
 import LandingPage from "./components/LandingPage/LandingPage";
@@ -13,13 +13,12 @@ class App extends Component {
     super(props);
     this.state = {
       resultsData: null,
-      redirectToResults: false,
     };
     this.handleDataRetrieval = this.handleDataRetrieval.bind(this);
   }
   // When the data from backend is retrieved, it is sent to this component and this method sets the state to the data.
   handleDataRetrieval(resultsData) {
-    this.setState({ resultsData: resultsData, redirectToResults: true });
+    this.setState({ resultsData: resultsData });
     console.log(this.state.resultsData);
     history.push(`/results`);
   }
@@ -45,4 +44,4 @@ class App extends Component {
   }
 }
 
-export default withRouter(App);
+export default App;

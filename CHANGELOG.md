@@ -3,6 +3,7 @@
 ## [Unreleased]
 
 - Show loading icon while waiting for post response
+- Add loading icon while post request happens- use react-spinners?
 - Integrate react-dropzone for photo input?
 - Make it more obvious when a photo has been chosen- preview image
 - Animated transitions (https://reacttraining.com/react-router/web/example/animated-transitions)
@@ -10,7 +11,7 @@
 - Convert knockout text to svg
 - Code split backend- Its not clear how to do that from some brief searches
 
-[0.7.0] - 2020-05-07
+[0.7.1] - 2020-05-07
 
 ## Added
 
@@ -19,6 +20,7 @@
 ## Changed
 
 - Changed structure to be more "top-to-bottom"
+- Removed unecessary code
 
 [0.5.0] - 2020-05-06
 

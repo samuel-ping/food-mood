@@ -1,17 +1,10 @@
 import React, { Component } from "react";
+import Background from "../Background/Background";
 import Navbar from "../Navbar";
 import RestaurantList from "./RestaurantList";
 import Map from "./Map";
 import MoodBar from "./MoodBar";
-import Background from "../../assets/beef-bowl-background-2.png";
 import "./ResultsPage.css";
-
-const pageBackground = {
-  backgroundImage: `url(${Background})`,
-  backgroundPosition: "center",
-  backgroundSize: "cover",
-  backgroundRepeat: "no-repeat",
-};
 
 class ResultsPage extends Component {
   constructor(props) {
@@ -33,7 +26,10 @@ class ResultsPage extends Component {
   }
   render() {
     return (
-      <div id="results-page-wrapper" style={pageBackground}>
+      <div id="results-page-wrapper">
+        <div id="results-page-background">
+          <Background backgroundImage="resultsBackground" />
+        </div>
         <Navbar />
         <div id="results-middle-page">
           <MoodBar mood={this.props.resultsData.mood} />

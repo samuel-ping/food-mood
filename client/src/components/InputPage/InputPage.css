@@ -4,6 +4,13 @@
   display: flex;
   overflow: hidden;
   text-align: center;
+  z-index: 1;
+  position: relative;
+}
+
+#input-page-background {
+  position: absolute;
+  z-index: -1;
 }
 
 .description-wrapper-2 {

@@ -2,15 +2,15 @@
 
 ## [Unreleased]
 
-- Load background images before page loads
+- Make background more reusable geez
+- Use react-loading for axios request on submit button?- https://stackoverflow.com/questions/35022922/how-can-i-block-a-react-component-to-be-rendered-until-i-fetched-all-information
 - Add map- react-leaflet?
 - Fix each child in a list should have unique key prop warning on results page
 - Show loading icon while waiting for post response
 - Add loading icon while post request happens- use react-spinners?
 - Integrate react-dropzone for photo input?
-- Make it more obvious when a photo has been chosen- preview image
+- Preview image after upload
 - Animated transitions (https://reacttraining.com/react-router/web/example/animated-transitions)
-- Must check a file is loaded before user presses submit button- deactivate the submit button until image is uploaded or something
 - Convert knockout text to svg
 - Code split backend- Its not clear how to do that from some brief searches
 
@@ -18,6 +18,7 @@
 
 ## Added
 
+- Loading icon for background images
 - Submit button is now deactivated until an image is chosen
 
 ## Fixed

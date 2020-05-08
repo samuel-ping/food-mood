@@ -1,19 +1,12 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { isMobile } from "react-device-detect";
-import Background from "../../assets/pasta-background.jpg";
+import Background from "../Background/Background";
 import Logo from "../Logo";
 import Description from "../Description";
 import Button from "../Button";
 import "./LandingPage.css";
 import "typeface-pacifico";
-
-const pageBackground = {
-  backgroundImage: `url(${Background})`,
-  backgroundPosition: "center",
-  backgroundSize: "cover",
-  backgroundRepeat: "no-repeat",
-};
 
 class LandingPage extends Component {
   render() {
@@ -23,7 +16,11 @@ class LandingPage extends Component {
       );
     }
     return (
-      <div className="landing" style={pageBackground}>
+      <div className="landing">
+        <div id="landing-background">
+          {/* <LandingBackground /> */}
+          <Background backgroundImage="landingBackground" />
+        </div>
         <div className="logo-wrapper">
           <Logo isLandingLogo="true" />
         </div>

@@ -2,6 +2,14 @@
   overflow: hidden;
   height: 100vh;
   box-shadow: inset 0px 0px 40vh #000000;
+  z-index: 1;
+  position: relative;
+}
+
+#landing-background {
+  position: absolute;
+  z-index: -1;
+  top: 0;
 }
 
 .logo-wrapper {

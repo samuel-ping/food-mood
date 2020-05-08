@@ -18,9 +18,7 @@ const PacmanLoader = () => {
       {promiseInProgress === true ? (
         <div>
           <SpinnersPacmanLoader css={override} size={120} color={"#ffffff"} />
-          <div id="loading-text">
-            Loading your restaurant recommendations...
-          </div>
+          <div id="loading-text">Getting your restaurant recommendation...</div>
         </div>
       ) : null}
     </div>

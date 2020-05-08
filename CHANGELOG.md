@@ -12,7 +12,7 @@
 - Animated transitions (https://reacttraining.com/react-router/web/example/animated-transitions)
 - Yelp review scraper? (long term goal)
 
-[1.4.1] - 2020-05-08
+[1.4.2] - 2020-05-08
 
 ## Added
 
@@ -29,6 +29,7 @@
 
 ## Fixed
 
+- Changed "recommendations" to "recommendation"... for now
 - Alert for mobile users now does not say the message pops up twice. In my defense, it popped up twice in development build, but not production for some reason...
 
 [1.0.2] - 2020-05-07

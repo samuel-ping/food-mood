@@ -1,11 +1,16 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { trackPromise } from "react-promise-tracker";
+// import { css } from "@emotion/core";
+// import PacmanLoader from "react-spinners/PacmanLoader";
 import Button from "../Button";
+
+// const override = css``;
 
 class SubmitImageButton extends Component {
   constructor(props) {
     super(props);
-    this.state = { encodedImage: null };
+    this.state = { encodedImage: null, isFetching: false };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -28,23 +33,26 @@ class SubmitImageButton extends Component {
       };
 
       console.log(data, "sending data to backend"); // for testing
+      // this.setState({ isFetching: true });
 
       // Sending data to backend to be processed.
-      axios
-        .post("/api/upload", data)
-        .then((response) => {
-          // Formats returned data and send it back to parent
-          const returnJSON = JSON.parse(JSON.stringify(response));
-          const returnToParentData = {
-            mood: returnJSON.data.mood,
-            restaurantName: returnJSON.data.restaurantName,
-            restaurantLocation: returnJSON.data.restaurantLocation,
-          };
-          this.props.onSubmit(returnToParentData);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
+      trackPromise(
+        axios
+          .post("/api/upload", data)
+          .then((response) => {
+            // Formats returned data and send it back to parent
+            const returnJSON = JSON.parse(JSON.stringify(response));
+            const returnToParentData = {
+              mood: returnJSON.data.mood,
+              restaurantName: returnJSON.data.restaurantName,
+              restaurantLocation: returnJSON.data.restaurantLocation,
+            };
+            this.props.onSubmit(returnToParentData);
+          })
+          .catch((error) => {
+            console.log(error);
+          })
+      );
     });
   }
 
@@ -69,6 +77,19 @@ class SubmitImageButton extends Component {
           />
         </div>
       );
+      // } else if (this.state.isFetching) {
+      //   return (
+      //     <div>
+      //       {this.state.isFetching ? (
+      //         <PacmanLoader
+      //           onLoad={this.handleSubmit}
+      //           // css={override}
+      //           size={70}
+      //           color={"#ffffff"}
+      //         />
+      //       ) : null}
+      //     </div>
+      //   );
     } else {
       return (
         <div>
@@ -79,6 +100,16 @@ class SubmitImageButton extends Component {
             />
           </label>
           <input id="photo-upload" type="button" />
+          {/* <div id="pacman-loader-wrapper">
+            {this.state.isFetching ? (
+              <PacmanLoader
+                onLoad={this.handleSubmit}
+                css={override}
+                size={70}
+                color={"#ffffff"}
+              />
+            ) : null}
+          </div> */}
         </div>
       );
     }

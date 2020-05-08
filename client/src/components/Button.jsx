@@ -29,11 +29,6 @@ class Button extends Component {
     } else {
       return (
         <div className="button">
-          {/* <div
-         className={
-           this.props.isActive === "true" ? "button" : "inactive-button"
-         }
-       > */}
           {this.props.isImage ? <ImageIcon /> : null}
           {this.props.buttonText}
           {this.props.isGetStarted ? <ArrowIcon /> : null}

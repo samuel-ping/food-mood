@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PacmanLoader from "./PacmanLoader";
 import Background from "../Background/Background";
 import Navbar from "../Navbar";
 import Description from "../Description";
@@ -10,6 +11,7 @@ class InputPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      submitIsFetching: false,
       image: null,
       imageUploaded: false,
       longitude: null,
@@ -48,6 +50,9 @@ class InputPage extends Component {
   render() {
     return (
       <div className="input-page-wrapper">
+        <div id="pacman-loader-wrapper">
+          <PacmanLoader />
+        </div>
         <div id="input-page-background">
           <Background
             backgroundImage="skewerImage"
@@ -56,7 +61,7 @@ class InputPage extends Component {
         </div>
         <Navbar />
         <div className="description-wrapper-2">
-          <Description descriptionText="First, allow this app to use your location. Then, either take a photo of yourself (and whoever you're with!) or browse your local files for such a photo. Once you upload it, give the app a few seconds, and your restaurant recommendation will be shown!" />
+          <Description descriptionText="First, allow this app to use your location. Then, either take a photo of yourself (and whoever you're with!) or browse your local files for such a photo. Once you upload it, the submit button will be enabled. After you click on that, give the app a few seconds, and your restaurant recommendation will be shown!" />
 
           <div className="button-wrapper-2">
             <div id="browse-images-button-wrapper">

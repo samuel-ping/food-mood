@@ -18,6 +18,7 @@ class InputPage extends Component {
     super(props);
     this.state = {
       image: null,
+      imageUploaded: false,
       longitude: null,
       latitude: null,
     };
@@ -44,11 +45,10 @@ class InputPage extends Component {
   }
 
   handleFileChange(image, testtext) {
-    this.setState({ image: image });
+    this.setState({ image: image, imageUploaded: true });
   }
 
   handleSubmit(resultsData) {
-    // this.setState({ resultsData: resultsData });
     this.props.onDataRetrieval(resultsData);
   }
 
@@ -60,13 +60,23 @@ class InputPage extends Component {
           <Description descriptionText="First, allow this app to use your location. Then, either take a photo of yourself (and whoever you're with!) or browse your local files for such a photo. Once you upload it, give the app a few seconds, and your restaurant recommendation will be shown!" />
 
           <div className="button-wrapper-2">
-            <BrowseImagesButton onFileChange={this.handleFileChange} />
-            <SubmitImageButton
-              image={this.state.image}
-              longitude={this.state.longitude}
-              latitude={this.state.latitude}
-              onSubmit={this.handleSubmit}
-            />
+            <div id="browse-images-button-wrapper">
+              <BrowseImagesButton
+                onFileChange={this.handleFileChange}
+                isActivated="true"
+              />
+            </div>
+            {this.state.imageUploaded ? (
+              <SubmitImageButton
+                image={this.state.image}
+                longitude={this.state.longitude}
+                latitude={this.state.latitude}
+                onSubmit={this.handleSubmit}
+                isActivated="true"
+              />
+            ) : (
+              <SubmitImageButton isActivated="false" />
+            )}
           </div>
         </div>
       </div>

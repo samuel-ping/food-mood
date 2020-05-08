@@ -7,15 +7,19 @@
 }
 
 .description-wrapper-2 {
-  margin-top: 20vh;
+  margin-top: 12vh;
   display: flex;
   flex-direction: column;
 }
 
 .button-wrapper-2 {
-  margin-top: 10vh;
-  margin-left: 35vw;
-  margin-right: 35vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#browse-images-button-wrapper {
+  margin-right: 2vw;
 }
 
 input[type="file"] {

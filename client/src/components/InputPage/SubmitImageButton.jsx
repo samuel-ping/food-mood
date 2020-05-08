@@ -60,14 +60,28 @@ class SubmitImageButton extends Component {
   }
 
   render() {
-    return (
-      <div>
-        <label onClick={this.handleSubmit} htmlFor="photo-upload">
-          <Button buttonText="Get a restaurant suggestion!" />
-        </label>
-        <input id="photo-upload" type="button" />
-      </div>
-    );
+    if (this.props.isActivated === "false") {
+      return (
+        <div>
+          <Button
+            buttonText="Get a restaurant suggestion!"
+            isActivated={this.props.isActivated}
+          />
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          <label onClick={this.handleSubmit} htmlFor="photo-upload">
+            <Button
+              buttonText="Get a restaurant suggestion!"
+              isActivated={this.props.isActivated}
+            />
+          </label>
+          <input id="photo-upload" type="button" />
+        </div>
+      );
+    }
   }
 }
 

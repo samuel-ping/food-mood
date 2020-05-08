@@ -14,6 +14,16 @@
 - Convert knockout text to svg
 - Code split backend- Its not clear how to do that from some brief searches
 
+[1.2.0] - 2020-05-08
+
+## Added
+
+- Submit button is now deactivated until an image is chosen
+
+## Fixed
+
+- Alert for mobile users now does not say the message pops up twice. In my defense, it popped up twice in development build, but not production for some reason...
+
 [1.0.2] - 2020-05-07
 
 ## Added

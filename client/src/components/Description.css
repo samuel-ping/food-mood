@@ -7,9 +7,9 @@
   justify-content: center;
   text-align: center;
   transition-duration: 0.2s;
+  text-shadow: 0.1em 0.1em black;
 }
 
 .description-wrapper:hover {
-  text-shadow: 0.1em 0.1em black;
   cursor: context-menu;
 }

@@ -19,7 +19,7 @@ class LandingPage extends Component {
   render() {
     if (isMobile) {
       alert(
-        "Just a warning, this app has not been optimized for mobile use yet. Also this message will appear twice."
+        "Just a warning, this app has not been optimized for mobile use yet."
       );
     }
     return (
@@ -35,7 +35,11 @@ class LandingPage extends Component {
         </div>
         <div className="button-wrapper">
           <Link to="/input-photo" style={{ textDecoration: "none" }}>
-            <Button isGetStarted="true" buttonText="Get Started" />
+            <Button
+              isGetStarted="true"
+              buttonText="Get Started"
+              isActivated="true"
+            />
           </Link>
         </div>
       </div>

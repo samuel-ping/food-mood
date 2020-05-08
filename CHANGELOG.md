@@ -14,10 +14,11 @@
 - Convert knockout text to svg
 - Code split backend- Its not clear how to do that from some brief searches
 
-[1.0.0] - 2020-05-07
+[1.0.2] - 2020-05-07
 
 ## Added
 
+- Warning for mobile users
 - Finished base code, works as expected. Needs lots of fine tuning.
 - FINALLY YES IT REDIRECTS TO RESULTS AFTER SUBMISSION HALLELUJAH
 

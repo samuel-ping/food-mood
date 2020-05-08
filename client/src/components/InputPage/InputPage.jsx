@@ -1,9 +1,17 @@
 import React, { Component } from "react";
+import Background from "../../assets/skewer-background.png";
 import Navbar from "../Navbar";
 import Description from "../Description";
 import BrowseImagesButton from "./BrowseImagesButton";
 import SubmitImageButton from "./SubmitImageButton";
 import "./InputPage.css";
+
+const pageBackground = {
+  backgroundImage: `url(${Background})`,
+  backgroundPosition: "center",
+  backgroundSize: "cover",
+  backgroundRepeat: "no-repeat",
+};
 
 class InputPage extends Component {
   constructor(props) {
@@ -46,7 +54,7 @@ class InputPage extends Component {
 
   render() {
     return (
-      <div className="input-page-wrapper">
+      <div className="input-page-wrapper" style={pageBackground}>
         <Navbar />
         <div className="description-wrapper-2">
           <Description descriptionText="First, allow this app to use your location. Then, either take a photo of yourself (and whoever you're with!) or browse your local files for such a photo. Once you upload it, give the app a few seconds, and your restaurant recommendation will be shown!" />

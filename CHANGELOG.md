@@ -12,10 +12,11 @@
 - Animated transitions (https://reacttraining.com/react-router/web/example/animated-transitions)
 - Yelp review scraper? (long term goal)
 
-[1.4.2] - 2020-05-08
+[1.4.3] - 2020-05-08
 
 ## Added
 
+- Website description
 - Loading for submit button!
 - Loading icon for background images
 - Submit button is now deactivated until an image is chosen

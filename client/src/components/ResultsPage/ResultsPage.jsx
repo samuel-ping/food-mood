@@ -29,7 +29,7 @@ class ResultsPage extends Component {
       //   },
       // },
     };
-    console.log(this.props.resultsData.restaurantLocation);
+    // console.log(this.props.resultsData.restaurantLocation);
   }
   render() {
     return (

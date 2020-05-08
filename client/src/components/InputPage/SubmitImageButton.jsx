@@ -31,7 +31,7 @@ class SubmitImageButton extends Component {
 
       // Sending data to backend to be processed.
       axios
-        .post("http://localhost:5000/api/upload", data)
+        .post("/api/upload", data)
         .then((response) => {
           // Formats returned data and send it back to parent
           const returnJSON = JSON.parse(JSON.stringify(response));

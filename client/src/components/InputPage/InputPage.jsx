@@ -49,7 +49,10 @@ class InputPage extends Component {
     return (
       <div className="input-page-wrapper">
         <div id="input-page-background">
-          <Background backgroundImage="inputBackground" />
+          <Background
+            backgroundImage="skewerImage"
+            placeholderImage="tinySkewerImage"
+          />
         </div>
         <Navbar />
         <div className="description-wrapper-2">

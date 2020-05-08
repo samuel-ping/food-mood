@@ -18,8 +18,10 @@ class LandingPage extends Component {
     return (
       <div className="landing">
         <div id="landing-background">
-          {/* <LandingBackground /> */}
-          <Background backgroundImage="landingBackground" />
+          <Background
+            backgroundImage="pastaImage"
+            placeholderImage="tinyPastaImage"
+          />
         </div>
         <div className="logo-wrapper">
           <Logo isLandingLogo="true" />

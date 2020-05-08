@@ -28,7 +28,10 @@ class ResultsPage extends Component {
     return (
       <div id="results-page-wrapper">
         <div id="results-page-background">
-          <Background backgroundImage="resultsBackground" />
+          <Background
+            backgroundImage="beefBowlImage"
+            placeholderImage="tinyBeefBowlImage"
+          />
         </div>
         <Navbar />
         <div id="results-middle-page">

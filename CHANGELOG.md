@@ -14,12 +14,17 @@
 - Convert knockout text to svg
 - Code split backend- Its not clear how to do that from some brief searches
 
-[1.2.0] - 2020-05-08
+[1.3.0] - 2020-05-08
 
 ## Added
 
 - Loading icon for background images
 - Submit button is now deactivated until an image is chosen
+
+## Changed
+
+- Changed loading icon for background images to progressive loading
+- Optimized images for faster loading times
 
 ## Fixed
 

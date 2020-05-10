@@ -1,17 +1,5 @@
 # Changelog
 
-## [Unreleased]
-
-- Show list of restaurants
-- Add map- react-leaflet?
-- Fix each child in a list should have unique key prop warning on results page
-- Integrate react-dropzone for photo input?
-- Preview image after upload
-- Convert knockout text to svg
-- Code split backend- Its not clear how to do that from some brief searches
-- Animated transitions (https://reacttraining.com/react-router/web/example/animated-transitions)
-- Yelp review scraper? (long term goal)
-
 [1.4.3] - 2020-05-08
 
 ## Added

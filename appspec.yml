@@ -1,0 +1,13 @@
+version: 0.0
+os: linux
+files:
+  - source: /food-mood
+    destination: /var/www/
+hooks:
+  BeforeInstall:
+    - location: deploy-scripts/install_dependencies.sh
+      timeout: 300
+      runas: root
+    - location: deploy-scripts/restart_server.sh
+      timeout: 180
+      runas: root

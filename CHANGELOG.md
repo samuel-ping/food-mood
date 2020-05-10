@@ -1,5 +1,13 @@
 # Changelog
 
+[1.4.4] - 2020-05-10
+
+## Added
+
+- Setting up AWS Codepipeline and CodeDeploy
+  - Added deploy-scripts
+  - Added appspec.yml
+
 [1.4.3] - 2020-05-08
 
 ## Added

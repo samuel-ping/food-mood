@@ -4,20 +4,11 @@ const app = express();
 const AWS = require("aws-sdk");
 const yelp = require("yelp-fusion");
 const cors = require("cors");
+const path = require("path");
 
+app.use(express.static(path.join(__dirname, "client/build")));
 app.use(express.json({ limit: "25mb" }));
 app.use(cors());
-
-if (process.env.NODE_ENV === "production") {
-  // Exprees will serve up production assets
-  app.use(express.static("client/build"));
-
-  // Express serve up index.html file if it doesn't recognize route
-  const path = require("path");
-  app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
-  });
-}
 
 // Setting AWS credentials.
 AWS.config.region = process.env.AWS_CONFIG_REGION;

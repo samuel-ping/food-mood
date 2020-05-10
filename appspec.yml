@@ -1,8 +1,8 @@
 version: 0.0
 os: linux
 files:
-  - source: /food-mood
-    destination: /var/www/
+  - source: /
+    destination: /var/www/food-mood
 hooks:
   BeforeInstall:
     - location: deploy-scripts/install_dependencies.sh

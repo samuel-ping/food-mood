@@ -8,8 +8,13 @@ const path = require("path");
 
 app.use(express.static(path.join(__dirname, "client/build")));
 // Solution for serving React app with client side routing and user refreshes page: https://create-react-app.dev/docs/deployment/#serving-apps-with-client-side-routing
-app.get("/*", function (req, res) {
-  res.sendFile(path.join(__dirname, "client/build", "index.html"));
+app.get("*", function (req, res) {
+  res.sendFile(path.join(__dirname, "client/build"), "index.html"),
+    function (err) {
+      if (err) {
+        res.status(500).send(err);
+      }
+    };
 });
 
 app.use(express.json({ limit: "25mb" })); // limits size of photo input to 25mb

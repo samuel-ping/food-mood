@@ -5,4 +5,5 @@
   object-fit: cover;
   position: fixed;
   left: 0;
+  box-shadow: inset 0px 0px 40vh #000000;
 }

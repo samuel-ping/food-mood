@@ -1,11 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { trackPromise } from "react-promise-tracker";
-// import { css } from "@emotion/core";
-// import PacmanLoader from "react-spinners/PacmanLoader";
 import Button from "../Button";
-
-// const override = css``;
 
 class SubmitImageButton extends Component {
   constructor(props) {
@@ -16,7 +12,6 @@ class SubmitImageButton extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    console.log("submit handler triggered");
 
     const image = this.props.image;
 
@@ -31,9 +26,6 @@ class SubmitImageButton extends Component {
         latitude: this.props.latitude,
         encodedImage: this.state.encodedImage,
       };
-
-      console.log(data, "sending data to backend"); // for testing
-      // this.setState({ isFetching: true });
 
       // Sending data to backend to be processed.
       trackPromise(
@@ -77,19 +69,6 @@ class SubmitImageButton extends Component {
           />
         </div>
       );
-      // } else if (this.state.isFetching) {
-      //   return (
-      //     <div>
-      //       {this.state.isFetching ? (
-      //         <PacmanLoader
-      //           onLoad={this.handleSubmit}
-      //           // css={override}
-      //           size={70}
-      //           color={"#ffffff"}
-      //         />
-      //       ) : null}
-      //     </div>
-      //   );
     } else {
       return (
         <div>
@@ -100,16 +79,6 @@ class SubmitImageButton extends Component {
             />
           </label>
           <input id="photo-upload" type="button" />
-          {/* <div id="pacman-loader-wrapper">
-            {this.state.isFetching ? (
-              <PacmanLoader
-                onLoad={this.handleSubmit}
-                css={override}
-                size={70}
-                color={"#ffffff"}
-              />
-            ) : null}
-          </div> */}
         </div>
       );
     }

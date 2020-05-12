@@ -1,6 +1,6 @@
 # Changelog
 
-[2.0.0] - 2020-05-12
+[2.0.1] - 2020-05-12
 
 ## Added
 
@@ -12,6 +12,8 @@
 
 ## Fixed
 
+- Removed console.logs from production
+- Removed unnecessary lines
 - Re-added vignette effect to landing page
 
 [1.4.4] - 2020-05-10

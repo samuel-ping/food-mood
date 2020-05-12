@@ -16,6 +16,7 @@ class App extends Component {
     };
     this.handleDataRetrieval = this.handleDataRetrieval.bind(this);
   }
+
   // When the data from backend is retrieved, it is sent to this component and this method sets the state to the data.
   // resultsData: {
   //   mood:
@@ -23,7 +24,6 @@ class App extends Component {
   // }
   handleDataRetrieval(resultsData) {
     this.setState({ resultsData: resultsData });
-    console.log("RESULTSDATA@APP.js:", this.state.resultsData);
     history.push(`/results`);
   }
 

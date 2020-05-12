@@ -4,7 +4,6 @@ import Button from "../Button";
 class BrowseImageButton extends Component {
   // sends image input back to parent
   handleFileChange = (event) => {
-    console.log("change handler triggered");
     this.props.onFileChange(event.target.files[0]);
   };
 

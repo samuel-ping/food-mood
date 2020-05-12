@@ -1,4 +1,4 @@
-version: 1.0
+version: 1.1
 os: linux
 files:
   - source: /
@@ -19,6 +19,9 @@ hooks:
     - location: scripts/install_dependencies.sh
       timeout: 300
       runas: root
+    - location: scripts/run_build.sh
+    - timeout: 300
+    - runas: root
   ApplicationStart:
     - location: scripts/start_server.sh
       timeout: 60

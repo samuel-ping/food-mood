@@ -7,7 +7,12 @@ const cors = require("cors");
 const path = require("path");
 
 app.use(express.static(path.join(__dirname, "client/build")));
-app.use(express.json({ limit: "25mb" }));
+// Solution for serving React app with client side routing and user refreshes page: https://create-react-app.dev/docs/deployment/#serving-apps-with-client-side-routing
+app.get("/*", function (req, res) {
+  res.sendFile(path.join(__dirname, "client/build", "index.html"));
+});
+
+app.use(express.json({ limit: "25mb" })); // limits size of photo input to 25mb
 app.use(cors());
 
 // Setting AWS credentials.

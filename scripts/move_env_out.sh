@@ -1,2 +1,3 @@
 #!/bin/bash
-mv /var/www/food-mood/.env /var/www
+mkdir /var/www/temp
+mv /var/www/food-mood/.env /var/www/temp

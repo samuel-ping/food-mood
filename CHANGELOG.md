@@ -1,5 +1,19 @@
 # Changelog
 
+[2.0.0] - 2020-05-12
+
+## Added
+
+- Successfully set up AWS CodePipeline and CodeDeploy after much effort!
+
+## Removed
+
+- Traces of Heroku (at last, slow website loading times are over!)
+
+## Fixed
+
+- Re-added vignette effect to landing page
+
 [1.4.4] - 2020-05-10
 
 ## Added

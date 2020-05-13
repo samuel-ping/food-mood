@@ -47,13 +47,29 @@ class SubmitImageButton extends Component {
           .then((response) => {
             // Formats returned data and send it back to parent
             const returnJSON = JSON.parse(JSON.stringify(response));
-            const returnToParentData = {
-              mood: returnJSON.data.mood,
-              restaurantName: returnJSON.data.restaurantName,
-              restaurantLocation: returnJSON.data.restaurantLocation,
-            };
-            this.props.onSubmit(returnToParentData);
+
+            const status = returnJSON.data.status;
+
+            if (status === 200) {
+              const returnToParentData = {
+                mood: returnJSON.data.mood,
+                restaurantName: returnJSON.data.restaurantName,
+                restaurantLocation: returnJSON.data.restaurantLocation,
+              };
+              this.props.onSubmit(returnToParentData);
+            } else if (status === 400) {
+              toast.error(
+                "Sorry, but we couldn't recognize a face in your photo! Please try again.",
+                toastOptions
+              );
+            } else {
+              toast.error(
+                "Hm, I'm not sure what happened there. Please try again.",
+                toastOptions
+              );
+            }
           })
+          // not sure if the below code is necessary
           .catch((error) => {
             var alertMessage = errorMessage.concat(error.response.statusText);
             toast.error(alertMessage, toastOptions);

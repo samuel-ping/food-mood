@@ -1,6 +1,6 @@
 {
   "name": "server",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Backend for Food Mood",
   "main": "index.js",
   "scripts": {

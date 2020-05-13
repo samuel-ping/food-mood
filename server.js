@@ -66,10 +66,17 @@ app.post("/api/upload", (req, res) => {
     Attributes: ["ALL"],
   };
 
-  rekognition.detectFaces(params, function (err, data) {
+  rekognition.detectFaces(params, (err, data) => {
     if (err) {
       console.log(err, err.stack);
       console.log("There was an error parsing your photo.");
+    } else if (data.FaceDetails.length === 0) {
+      const returnData = {
+        status: 400,
+        message: "Your uploaded photo did not contain a face to analyze.",
+      };
+      console.log("GKERNWGKRENKRLEERROR GERORFEEROR");
+      res.json(returnData);
     } else {
       const numPeople = data.FaceDetails.length;
       const EmotionsData = data.FaceDetails[0].Emotions; // Extracting the emotions from faces dataset.
@@ -89,7 +96,7 @@ app.post("/api/upload", (req, res) => {
           }
         }
       }
-      const finalEmotion = highestEmotion;
+      const finalEmotion = highestEmotion; // setting the finally determined emotion
 
       // Sending query to Fusion API with search term: "food " + finalMood.
       const searchTerm = "food ".concat(finalEmotion);
@@ -107,6 +114,8 @@ app.post("/api/upload", (req, res) => {
             JSON.stringify(response.jsonBody.businesses[0])
           );
           const returnData = {
+            status: 200,
+            message: "Success!",
             restaurantName: restaurantData.name,
             restaurantLocation: restaurantData.location,
             mood: finalEmotion,

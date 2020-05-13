@@ -1,9 +1,10 @@
 # Changelog
 
-[2.0.1] - 2020-05-12
+[2.1.0] - 2020-05-12
 
 ## Added
 
+- Error messages when there's an error with the picture
 - Successfully set up AWS CodePipeline and CodeDeploy after much effort!
 
 ## Removed

@@ -2,6 +2,19 @@ import React, { Component } from "react";
 import axios from "axios";
 import { trackPromise } from "react-promise-tracker";
 import Button from "../Button";
+import { toast, Slide } from "react-toastify";
+
+const errorMessage = "ERROR: ";
+const toastOptions = {
+  position: "bottom-center",
+  autoClose: 10000,
+  transition: Slide,
+  hideProgressBar: false,
+  closeOnClick: true,
+  pauseOnHover: true,
+  draggable: true,
+  progress: undefined,
+};
 
 class SubmitImageButton extends Component {
   constructor(props) {
@@ -42,7 +55,8 @@ class SubmitImageButton extends Component {
             this.props.onSubmit(returnToParentData);
           })
           .catch((error) => {
-            console.log(error);
+            var alertMessage = errorMessage.concat(error.response.statusText);
+            toast.error(alertMessage, toastOptions);
           })
       );
     });

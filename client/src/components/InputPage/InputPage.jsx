@@ -39,7 +39,7 @@ class InputPage extends Component {
     }
   }
 
-  handleFileChange(image, testtext) {
+  handleFileChange(image) {
     this.setState({ image: image, imageUploaded: true });
   }
 

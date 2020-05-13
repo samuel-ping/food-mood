@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import { Router, Switch, Route } from "react-router-dom";
 import { createBrowserHistory } from "history";
-
 import LandingPage from "./components/LandingPage/LandingPage";
 import InputPage from "./components/InputPage/InputPage";
 import ResultsPage from "./components/ResultsPage/ResultsPage";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const history = createBrowserHistory();
 
@@ -43,6 +44,7 @@ class App extends Component {
             </Route>
           </Switch>
         </Router>
+        <ToastContainer />
       </div>
     );
   }

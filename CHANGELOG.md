@@ -13,6 +13,7 @@
 
 ## Fixed
 
+- Server crash when there's an error in the backend... hopefully. Backstory: I put a picture of the landing page pasta in my app and the website broke
 - Removed console.logs from production
 - Removed unnecessary lines
 - Re-added vignette effect to landing page

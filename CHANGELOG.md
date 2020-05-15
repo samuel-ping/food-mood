@@ -1,6 +1,6 @@
 # Changelog
 
-[2.2.0] - 2020-05-15
+[2.2.1] - 2020-05-15
 
 ## Added
 
@@ -9,6 +9,10 @@
 ## Changed
 
 - Made navbar a bit smaller
+
+## Fixed
+
+- Pushed something I was testing by accident whoops
 
 [2.1.0] - 2020-05-12
 

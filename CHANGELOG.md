@@ -1,5 +1,15 @@
 # Changelog
 
+[2.2.0] - 2020-05-15
+
+## Added
+
+- Button to check out GitHub
+
+## Changed
+
+- Made navbar a bit smaller
+
 [2.1.0] - 2020-05-12
 
 ## Added

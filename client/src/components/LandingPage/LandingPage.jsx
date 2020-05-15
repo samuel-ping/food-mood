@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { isMobile } from "react-device-detect";
 import Background from "../Background/Background";
+import Navbar from "../Navbar";
 import Logo from "../Logo";
 import Description from "../Description";
 import Button from "../Button";
@@ -17,6 +18,7 @@ class LandingPage extends Component {
     }
     return (
       <div className="landing">
+        <Navbar />
         <div id="landing-background">
           <Background
             backgroundImage="pastaImage"

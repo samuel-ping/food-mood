@@ -25,7 +25,7 @@ class App extends Component {
   // }
   handleDataRetrieval(resultsData) {
     this.setState({ resultsData: resultsData });
-    history.push(`/results`);
+    history.push(`/github.com`);
   }
 
   render() {

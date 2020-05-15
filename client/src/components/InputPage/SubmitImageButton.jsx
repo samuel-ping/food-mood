@@ -47,7 +47,6 @@ class SubmitImageButton extends Component {
           .then((response) => {
             // Formats returned data and send it back to parent
             const returnJSON = JSON.parse(JSON.stringify(response));
-
             const status = returnJSON.data.status;
 
             if (status === 200) {

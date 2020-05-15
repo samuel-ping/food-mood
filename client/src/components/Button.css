@@ -36,3 +36,17 @@
   transition-duration: 0.2s;
   background-color: #ffffff73;
 }
+
+#github-button-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.1em;
+  padding: 1em 1em;
+  transition-duration: 0.2s;
+  color: white;
+}
+
+#github-button-wrapper:hover {
+  font-size: 3em;
+}

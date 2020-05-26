@@ -13,7 +13,7 @@ class BrowseImageButton extends Component {
         <label htmlFor="userphoto">
           <Button
             isImage="true"
-            buttonText="Browse Photos"
+            buttonText="Browse/Take Photos"
             isActive={this.props.isActive}
           />
         </label>

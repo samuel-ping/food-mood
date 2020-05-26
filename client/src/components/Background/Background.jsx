@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import BackgroundImage from "react-image";
 import BackgroundImageBank from "./BackgroundImagesBank";
 import "./Background.css";
 

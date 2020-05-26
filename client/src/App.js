@@ -30,7 +30,7 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <>
         <Router history={history}>
           <Switch>
             <Route path="/input-photo">
@@ -45,7 +45,7 @@ class App extends Component {
           </Switch>
         </Router>
         <ToastContainer />
-      </div>
+      </>
     );
   }
 }

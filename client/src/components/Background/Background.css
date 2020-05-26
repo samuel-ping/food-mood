@@ -1,4 +1,4 @@
-#background-wrapper {
+/* #background-wrapper {
   height: 100vh;
   width: 100%;
   -o-object-fit: cover;
@@ -6,4 +6,23 @@
   position: fixed;
   left: 0;
   box-shadow: inset 0px 0px 40vh #000000;
+} */
+
+.image {
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  left: 0;
+  object-fit: cover;
+  box-shadow: inset 0px 0px 40vh #000000;
+}
+
+.full {
+  transition: opacity 400ms ease 0ms;
+}
+
+.thumbnail {
+  filter: blur(20px);
+  transform: scale(1.1);
+  transition: visibility 0ms ease 400ms;
 }

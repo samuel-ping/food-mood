@@ -1,5 +1,11 @@
 # Changelog
 
+[2.3.0] - 2020-05-25
+
+## Changed
+
+- Replaced react-image with progressive loading image component
+
 [2.2.1] - 2020-05-15
 
 ## Added

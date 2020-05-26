@@ -4,7 +4,10 @@
   "description": "Backend for Food Mood",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "client": "npm run start --prefix client",
+    "server": "nodemon server.js",
+    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
+    "start": "node server.js"
   },
   "author": "Samuel Ping",
   "license": "ISC",
@@ -15,5 +18,8 @@
     "express": "^4.17.1",
     "yelp-fusion": "^3.0.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "concurrently": "^5.2.0",
+    "nodemon": "^2.0.4"
+  }
 }

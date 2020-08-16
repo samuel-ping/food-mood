@@ -13,9 +13,3 @@ After the challenge ended, I decided to continue improving this project. I rebui
 ### Food Mood v1
 
 The first version of Food Mood was built as an entry to Capital One's Software Engineering Summit challenge. It was hosted server-side using Express.js, which delivered a static HTML page to the client. You can check out the original project here: https://github.com/samuel-ping/Old-Food-Mood and the original coding challenge here: https://www.mindsumo.com/contests/d052bcf8-4580-4922-95ef-a9f6ceaf0f10.
-
-###### Photos don't require attribution but I'll put them here:
-
-- Landing page: https://pixabay.com/photos/background-diet-dinner-dry-eat-2093/
-- Photo input page: https://pixabay.com/photos/shish-kebab-meat-skewer-417994/
-- Results page: https://pixabay.com/photos/beef-rice-egg-food-meal-meat-4723638/

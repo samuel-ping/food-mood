@@ -13,10 +13,6 @@
 ## production
 /client/build
 
-## misc
-/client/npm-debug.log*
-/client/yarn-debug.log*
-/client/yarn-error.log*
 
 # Server
 ## dependencies

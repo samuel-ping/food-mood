@@ -6,6 +6,7 @@ class LocationRequestButton extends Component {
     this.state = {
       locationData: { isShared: false, longitude: "", latitude: "" },
     };
+    console.log(this.props.isEnabled);
   }
 
   requestLocation = () => {
@@ -31,15 +32,27 @@ class LocationRequestButton extends Component {
   };
 
   render() {
-    return (
-      <>
-        <div className="location-share-button-wrapper">
-          <button onClick={this.requestLocation}>
-            Click here to enable location access for this app.
-          </button>
-        </div>
-      </>
-    );
+    if (!this.props.isDisabled) {
+      return (
+        <>
+          <div className="location-share-button-wrapper">
+            <button onClick={this.requestLocation}>
+              Click here to enable location access for this app.
+            </button>
+          </div>
+        </>
+      );
+    } else {
+      return (
+        <>
+          <div className="location-share-button-wrapper">
+            <button disabled>
+              Click here to enable location access for this app.
+            </button>
+          </div>
+        </>
+      );
+    }
   }
 }
 

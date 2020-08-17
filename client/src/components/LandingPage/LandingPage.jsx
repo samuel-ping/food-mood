@@ -22,6 +22,7 @@ class LandingPage extends Component {
     };
     this.handleLocation = this.handleLocation.bind(this);
     this.handleImageSubmission = this.handleImageSubmission.bind(this);
+    console.log(this.props.locationData.isShared);
   }
 
   handleLocation = (locationData) => {
@@ -105,7 +106,10 @@ class LandingPage extends Component {
             <div className="directions-wrapper">
               <ol>
                 <li>
-                  <LocationRequestButton handleLocation={this.handleLocation} />
+                  <LocationRequestButton
+                    handleLocation={this.handleLocation}
+                    isDisabled={this.props.locationData.isShared}
+                  />
                 </li>
                 <li>
                   Press the submit button below to either take a photo of
@@ -122,7 +126,7 @@ class LandingPage extends Component {
           <div className="button-wrapper">
             <SubmitButton
               handleImageSubmission={this.handleImageSubmission}
-              isEnabled={this.props.locationData.isShared}
+              isEnabled={this.props.locationData.isShared} // if location is shared, disable th
               isLoading={this.state.loadingResults}
             />
           </div>

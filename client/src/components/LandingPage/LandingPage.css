@@ -1,6 +1,6 @@
 .landing-wrapper {
   background-image: linear-gradient(rgba(0, 0, 0, 0.471), rgba(0, 0, 0, 0.471)),
-    url(../../assets/pasta-basil.jpg);
+    url(../../assets/pasta-basil-landing-background.jpg);
   background-size: cover;
   height: 100vh;
   display: flex;

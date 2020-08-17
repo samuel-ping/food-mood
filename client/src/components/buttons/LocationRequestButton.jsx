@@ -3,7 +3,9 @@ import React, { Component } from "react";
 class LocationRequestButton extends Component {
   constructor(props) {
     super(props);
-    this.state = { location: { longitude: "", latitude: "" } };
+    this.state = {
+      locationData: { isShared: false, longitude: "", latitude: "" },
+    };
   }
 
   requestLocation = () => {
@@ -12,15 +14,14 @@ class LocationRequestButton extends Component {
         var longitude = parseFloat(position.coords.longitude).toString();
         var latitude = parseFloat(position.coords.latitude).toString();
         this.setState({
-          location: {
+          locationData: {
+            isShared: true,
             longitude: longitude,
             latitude: latitude,
           },
         });
-        console.log(
-          "sending location to parent: " + this.state.location.longitude
-        );
-        this.props.handleLocation(this.state.location);
+
+        this.props.handleLocation(this.state.locationData);
       });
     } else {
       alert(

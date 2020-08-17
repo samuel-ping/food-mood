@@ -10,24 +10,22 @@ class LandingPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      locationShared: false,
-      longitude: "",
-      latitude: "",
+      // locationData: {
+      //   isShared: false,
+      //   longitude: "",
+      //   latitude: "",
+      // },
       loadingResults: false,
       encodedImage: "",
       resultsData: "",
       image: "",
     };
-    this.retrieveLocation = this.retrieveLocation.bind(this);
+    this.handleLocation = this.handleLocation.bind(this);
     this.handleImageSubmission = this.handleImageSubmission.bind(this);
   }
 
-  retrieveLocation = (location) => {
-    this.setState({
-      locationShared: true,
-      longitude: location.longitude,
-      latitude: location.latitude,
-    });
+  handleLocation = (locationData) => {
+    this.props.setLocationData(locationData);
   };
 
   handleImageSubmission = (imageSubmission) => {
@@ -42,8 +40,8 @@ class LandingPage extends Component {
 
       // Preparing data to be sent to backend.
       const data = {
-        longitude: this.state.longitude,
-        latitude: this.state.latitude,
+        longitude: this.props.locationData.longitude,
+        latitude: this.props.locationData.latitude,
         encodedImage: this.state.encodedImage,
       };
 
@@ -63,6 +61,7 @@ class LandingPage extends Component {
 
           this.setState({
             resultsData: returnToParentData,
+            loadingResults: false,
           });
 
           this.props.onDataRetrieval(returnToParentData);
@@ -106,9 +105,7 @@ class LandingPage extends Component {
             <div className="directions-wrapper">
               <ol>
                 <li>
-                  <LocationRequestButton
-                    handleLocation={this.retrieveLocation}
-                  />
+                  <LocationRequestButton handleLocation={this.handleLocation} />
                 </li>
                 <li>
                   Press the submit button below to either take a photo of
@@ -125,7 +122,7 @@ class LandingPage extends Component {
           <div className="button-wrapper">
             <SubmitButton
               handleImageSubmission={this.handleImageSubmission}
-              isEnabled={this.state.locationShared}
+              isEnabled={this.props.locationData.isShared}
               isLoading={this.state.loadingResults}
             />
           </div>

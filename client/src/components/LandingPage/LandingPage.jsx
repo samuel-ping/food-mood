@@ -24,10 +24,10 @@ class LandingPage extends Component {
 
   retrieveLocation = (location) => {
     this.setState({
+      locationShared: true,
       longitude: location.longitude,
       latitude: location.latitude,
     });
-    console.log(this.state.longitude);
   };
 
   handleImageSubmission = (imageSubmission) => {
@@ -125,6 +125,7 @@ class LandingPage extends Component {
           <div className="button-wrapper">
             <SubmitButton
               handleImageSubmission={this.handleImageSubmission}
+              isEnabled={this.state.locationShared}
               isLoading={this.state.loadingResults}
             />
           </div>

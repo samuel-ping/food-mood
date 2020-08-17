@@ -9,19 +9,28 @@ class SubmitButton extends Component {
 
   render() {
     if (!this.props.isLoading) {
-      return (
-        <>
-          <label className="submit-button active" htmlFor="photo-upload">
-            Submit
-          </label>
-          <input
-            id="photo-upload"
-            type="file"
-            accept="image/*"
-            onChange={this.sendBackPhoto}
-          />
-        </>
-      );
+      if (!this.props.isEnabled) {
+        return (
+          <>
+            <label className="submit-button disabled">Submit</label>
+            />
+          </>
+        );
+      } else if (this.props.isEnabled) {
+        return (
+          <>
+            <label className="submit-button active" htmlFor="photo-upload">
+              Submit
+            </label>
+            <input
+              id="photo-upload"
+              type="file"
+              accept="image/*"
+              onChange={this.sendBackPhoto}
+            />
+          </>
+        );
+      }
     } else {
       return (
         <>

@@ -1,19 +1,16 @@
-import React, { Component } from "react";
+import React from "react";
 import Logo from "./Logo";
-import Button from "./Button";
-import "./Navbar.css";
 
-class Navbar extends Component {
-  render() {
-    return (
-      <div className="navbar">
-        <Logo isNavbarLogo="true" />
-        <div id="navbar-right-side">
-          <Button isGitHub="true" />
+const Navbar = () => {
+  return (
+    <>
+      <div className="navbar-wrapper">
+        <div className="navbar-logo-wrapper">
+          <Logo isNavbarLogo="true" />
         </div>
       </div>
-    );
-  }
-}
+    </>
+  );
+};
 
 export default Navbar;

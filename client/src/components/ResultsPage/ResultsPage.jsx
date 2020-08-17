@@ -10,7 +10,7 @@ class ResultsPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      // for testing
+      // Example Data:
       // resultsData: {
       //   mood: "HAPPY",
       //   restaurantName: "A Happy Family",
@@ -22,8 +22,8 @@ class ResultsPage extends Component {
       //   },
       // },
     };
-    // console.log(this.props.resultsData.restaurantLocation);
   }
+
   render() {
     return (
       <div id="results-page-wrapper">
@@ -40,7 +40,7 @@ class ResultsPage extends Component {
             restaurantName={this.props.resultsData.restaurantName}
             restaurantLocation={this.props.resultsData.restaurantLocation}
           />
-          <Map />
+          {/* <Map /> */}
         </div>
       </div>
     );

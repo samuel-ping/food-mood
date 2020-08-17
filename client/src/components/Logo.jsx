@@ -19,7 +19,7 @@ class Logo extends Component {
           ""
         )}
         {this.props.isNavbarLogo ? (
-          <div id="logo" style={{ fontSize: "2.5vw" }}>
+          <div id="logo" style={{ fontSize: "4vw" }}>
             <div id="logop1">food</div>
             <div id="logop2">MOOD</div>
           </div>

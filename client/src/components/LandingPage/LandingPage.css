@@ -1,27 +1,41 @@
-.landing {
-  overflow: hidden;
+.landing-wrapper {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.471), rgba(0, 0, 0, 0.471)),
+    url(../../assets/pasta-basil.jpg);
+  background-size: cover;
   height: 100vh;
-  box-shadow: inset 0px 0px 40vh #000000;
-  z-index: 1;
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
-#landing-background {
-  position: absolute;
-  z-index: -1;
-  top: 0;
-}
-
-.logo-wrapper {
-  margin-top: 20vh;
-}
 .description-wrapper {
-  margin: 0 4vw;
+  color: #ffffff;
+  margin: 1vh 30vw;
+  font-family: "Open Sans";
 }
+
 .button-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
-  margin-top: 8vh;
+}
+
+.submit-button {
+  color: #ffffff;
+  font-family: "Open Sans";
+  border-style: solid;
+  border-color: #ffffff;
+  border-width: 3px;
+  padding: 4vh 5vw;
+  transition-duration: 0.3s;
+}
+
+.submit-button:hover {
+  background-color: #ffffff;
+  color: #000000;
+  cursor: pointer;
+}
+
+input[type="file"] {
+  display: none;
 }

@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { Router, Switch, Route } from "react-router-dom";
 import { createBrowserHistory } from "history";
 import LandingPage from "./components/LandingPage/LandingPage";
-import InputPage from "./components/InputPage/InputPage";
 import ResultsPage from "./components/ResultsPage/ResultsPage";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -13,7 +12,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      resultsData: null,
+      resultsData: "",
     };
     this.handleDataRetrieval = this.handleDataRetrieval.bind(this);
   }
@@ -33,14 +32,11 @@ class App extends Component {
       <>
         <Router history={history}>
           <Switch>
-            <Route path="/input-photo">
-              <InputPage onDataRetrieval={this.handleDataRetrieval} />
-            </Route>
             <Route path="/results">
               <ResultsPage resultsData={this.state.resultsData} />
             </Route>
             <Route path="/">
-              <LandingPage />
+              <LandingPage onDataRetrieval={this.handleDataRetrieval} />
             </Route>
           </Switch>
         </Router>

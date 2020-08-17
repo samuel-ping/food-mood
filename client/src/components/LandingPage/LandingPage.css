@@ -1,6 +1,6 @@
 .landing-wrapper {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.471), rgba(0, 0, 0, 0.471)),
-    url(../../assets/pasta-basil-landing-background.jpg);
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.471), rgba(0, 0, 0, 0.471)),
+    url(../../assets/pasta-basil-landing-background.jpg); */
   background-size: cover;
   height: 100vh;
   display: flex;
@@ -21,10 +21,7 @@
 }
 
 .submit-button {
-  color: #ffffff;
   font-family: "Open Sans";
-  border-style: solid;
-  border-color: #ffffff;
   border-width: 3px;
   padding: 4vh 5vw;
   transition-duration: 0.3s;
@@ -34,6 +31,24 @@
   background-color: #ffffff;
   color: #000000;
   cursor: pointer;
+}
+
+.active {
+  color: #ffffff;
+  border-style: solid;
+  border-color: #ffffff;
+}
+
+.disabled {
+  color: #737373;
+  border-style: solid;
+  border-color: #737373;
+}
+
+.disabled:hover {
+  background-color: transparent;
+  color: #737373;
+  cursor: default;
 }
 
 input[type="file"] {

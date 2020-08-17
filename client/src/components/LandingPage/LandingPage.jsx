@@ -1,13 +1,16 @@
 import React, { Component } from "react";
 import axios from "axios";
 import Logo from "../Logo";
-import Button from "../Button";
+import LocationRequestButton from "../buttons/LocationRequestButton";
+import SubmitButton from "../buttons/SubmitButton";
+import PastaBackground from "../../assets/pasta-basil-landing-background.jpg";
 import "./LandingPage.css";
 
 class LandingPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      locationShared: false,
       longitude: "",
       latitude: "",
       loadingResults: false,
@@ -15,26 +18,17 @@ class LandingPage extends Component {
       resultsData: "",
       image: "",
     };
+    this.retrieveLocation = this.retrieveLocation.bind(this);
     this.handleImageSubmission = this.handleImageSubmission.bind(this);
   }
 
-  // When page loads, gets the geolocation of user
-  componentDidMount() {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition((position) => {
-        var longitude = parseFloat(position.coords.longitude).toString();
-        var latitude = parseFloat(position.coords.latitude).toString();
-        this.setState({
-          longitude: longitude,
-          latitude: latitude,
-        });
-      });
-    } else {
-      alert(
-        "You need to enable location sharing in order to get a restaurant!"
-      );
-    }
-  }
+  retrieveLocation = (location) => {
+    this.setState({
+      longitude: location.longitude,
+      latitude: location.latitude,
+    });
+    console.log(this.state.longitude);
+  };
 
   handleImageSubmission = (imageSubmission) => {
     this.setState({ loadingResults: true });
@@ -94,7 +88,15 @@ class LandingPage extends Component {
   render() {
     return (
       <>
-        <div className="landing-wrapper">
+        <div
+          className="landing-wrapper"
+          style={{
+            backgroundImage: `linear-gradient(
+                rgba(0, 0, 0, 0.471),
+                rgba(0, 0, 0, 0.471)
+              ), url("${PastaBackground}")`,
+          }}
+        >
           <Logo isNavbarLogo="true" />
           <div className="description-wrapper">
             <div className="description">
@@ -103,7 +105,11 @@ class LandingPage extends Component {
             </div>
             <div className="directions-wrapper">
               <ol>
-                <li>Enable location sharing.</li>
+                <li>
+                  <LocationRequestButton
+                    handleLocation={this.retrieveLocation}
+                  />
+                </li>
                 <li>
                   Press the submit button below to either take a photo of
                   yourself (and whoever you're with!) or choose a selfie from
@@ -117,7 +123,7 @@ class LandingPage extends Component {
             </div>
           </div>
           <div className="button-wrapper">
-            <Button
+            <SubmitButton
               handleImageSubmission={this.handleImageSubmission}
               isLoading={this.state.loadingResults}
             />

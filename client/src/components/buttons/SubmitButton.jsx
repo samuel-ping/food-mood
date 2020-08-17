@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import Loader from "react-spinners/ClipLoader";
-import "./LandingPage/LandingPage.css";
+import "../LandingPage/LandingPage.css";
 
-class Button extends Component {
+class SubmitButton extends Component {
   sendBackPhoto = (e) => {
     this.props.handleImageSubmission(e.target.files[0]);
   };
@@ -11,7 +11,7 @@ class Button extends Component {
     if (!this.props.isLoading) {
       return (
         <>
-          <label className="submit-button" htmlFor="photo-upload">
+          <label className="submit-button active" htmlFor="photo-upload">
             Submit
           </label>
           <input
@@ -34,4 +34,4 @@ class Button extends Component {
   }
 }
 
-export default Button;
+export default SubmitButton;

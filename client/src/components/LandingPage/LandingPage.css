@@ -1,6 +1,4 @@
 .landing-wrapper {
-  /* background-image: linear-gradient(rgba(0, 0, 0, 0.471), rgba(0, 0, 0, 0.471)),
-    url(../../assets/pasta-basil-landing-background.jpg); */
   background-size: cover;
   height: 100vh;
   display: flex;
@@ -53,4 +51,60 @@
 
 input[type="file"] {
   display: none;
+}
+
+/* Mobile */
+.landing-wrapper-mobile {
+  background-size: cover;
+  background-position: right;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.description-wrapper-mobile {
+  color: #ffffff;
+  margin: 1vh 5vw;
+  font-size: 1.1em;
+  font-family: "Open Sans";
+  text-align: center;
+}
+
+.description-mobile {
+  margin-bottom: 2vh;
+}
+
+.directions-wrapper-mobile {
+  font-size: 1.1em;
+}
+
+.button-wrapper-mobile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button.location-share-button-mobile {
+  font-size: 1em;
+}
+
+.submit-button-mobile {
+  font-size: 1.2em;
+  font-family: "Open Sans";
+  border-width: 3px;
+  padding: 4vh 20vw;
+  transition-duration: 0.3s;
+}
+
+.submit-button-mobile:hover {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.disabled:hover {
+  background-color: transparent;
+  color: #737373;
+  cursor: default;
 }

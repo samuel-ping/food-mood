@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "../LandingPage/LandingPage.css";
 
 class LocationRequestButton extends Component {
   constructor(props) {
@@ -6,7 +7,6 @@ class LocationRequestButton extends Component {
     this.state = {
       locationData: { isShared: false, longitude: "", latitude: "" },
     };
-    console.log(this.props.isEnabled);
   }
 
   requestLocation = () => {
@@ -35,21 +35,31 @@ class LocationRequestButton extends Component {
     if (!this.props.isDisabled) {
       return (
         <>
-          <div className="location-share-button-wrapper">
-            <button onClick={this.requestLocation}>
-              Click here to enable location access for this app.
-            </button>
-          </div>
+          <button
+            className={
+              this.props.isMobile
+                ? "location-share-button-mobile"
+                : "location-share-button"
+            }
+            onClick={this.requestLocation}
+          >
+            1. Click here to enable location access for this app.
+          </button>
         </>
       );
     } else {
       return (
         <>
-          <div className="location-share-button-wrapper">
-            <button disabled>
-              Click here to enable location access for this app.
-            </button>
-          </div>
+          <button
+            className={
+              this.props.isMobile
+                ? "location-share-button-mobile"
+                : "location-share-button"
+            }
+            disabled
+          >
+            Click here to enable location access for this app.
+          </button>
         </>
       );
     }

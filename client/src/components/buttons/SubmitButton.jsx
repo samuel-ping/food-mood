@@ -12,14 +12,28 @@ class SubmitButton extends Component {
       if (!this.props.isEnabled) {
         return (
           <>
-            <label className="submit-button disabled">Submit</label>
-            />
+            <label
+              className={
+                this.props.isMobile
+                  ? "submit-button-mobile disabled"
+                  : "submit-button disabled"
+              }
+            >
+              Submit
+            </label>
           </>
         );
       } else if (this.props.isEnabled) {
         return (
           <>
-            <label className="submit-button active" htmlFor="photo-upload">
+            <label
+              className={
+                this.props.isMobile
+                  ? "submit-button-mobile active"
+                  : "submit-button active"
+              }
+              htmlFor="photo-upload"
+            >
               Submit
             </label>
             <input
@@ -35,7 +49,7 @@ class SubmitButton extends Component {
       return (
         <>
           <label className="loading-button">
-            <Loader size={30} color={"#ffffff"} />
+            <Loader size={this.props.isMobile ? 60 : 30} color={"#ffffff"} />
           </label>
         </>
       );

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Router, Switch, Route } from "react-router-dom";
 import { createBrowserHistory } from "history";
+import { isMobile } from "react-device-detect";
 import LandingPage from "./components/LandingPage/LandingPage";
 import ResultsPage from "./components/ResultsPage/ResultsPage";
 import { ToastContainer } from "react-toastify";
@@ -43,6 +44,7 @@ class App extends Component {
             </Route>
             <Route path="/">
               <LandingPage
+                isMobile={isMobile}
                 setLocationData={this.setLocationData}
                 locationData={this.state.locationData}
                 onDataRetrieval={this.handleDataRetrieval}

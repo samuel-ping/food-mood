@@ -102,7 +102,7 @@ class LandingPage extends Component {
                 suggests a restaurant based on that mood!
               </div>
               <div className="directions-wrapper-mobile">
-                <ol>
+                <ul>
                   <li>
                     <LocationRequestButton
                       isMobile={this.props.isMobile}
@@ -111,15 +111,15 @@ class LandingPage extends Component {
                     />
                   </li>
                   <li>
-                    Press the submit button below to either take a photo of
+                    2. Press the submit button below to either take a photo of
                     yourself (and whoever you're with!) or choose a selfie from
                     your gallery.
                   </li>
                   <li>
-                    After choosing a photo, wait a few seconds, and Food Mood
+                    3. After choosing a photo, wait a few seconds, and Food Mood
                     will recommend a nearby restaurant for you!
                   </li>
-                </ol>
+                </ul>
               </div>
             </div>
             <div className="button-wrapper-mobile">

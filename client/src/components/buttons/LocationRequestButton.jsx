@@ -43,7 +43,7 @@ class LocationRequestButton extends Component {
             }
             onClick={this.requestLocation}
           >
-            Click here to enable location access for this app.
+            1. Click here to enable location access for this app.
           </button>
         </>
       );

@@ -3,6 +3,7 @@ import axios from "axios";
 import Logo from "../Logo";
 import LocationRequestButton from "../buttons/LocationRequestButton";
 import SubmitButton from "../buttons/SubmitButton";
+import Footer from "../Footer";
 import PastaBackground from "../../assets/pasta-basil-landing-background.jpg";
 import MobilePancakeBackground from "../../assets/pasta-basil-landing-background.jpg";
 // import MobilePancakeBackground from "../../assets/pancakes.jpg";
@@ -130,6 +131,7 @@ class LandingPage extends Component {
                 isLoading={this.state.loadingResults}
               />
             </div>
+            <Footer />
           </div>
         </>
       );
@@ -178,6 +180,7 @@ class LandingPage extends Component {
                 isLoading={this.state.loadingResults}
               />
             </div>
+            <Footer />
           </div>
         </>
       );

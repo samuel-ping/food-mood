@@ -7,9 +7,15 @@ html {
   background-color: #fffacd;
 }
 
-ul,
-li {
-  /* list-style-type: none;
-  list-style-position: inside;
-  padding-left: 0; */
+.react-icons {
+  color: #ffffff;
+  vertical-align: middle;
+  height: 3em;
+  width: 3em;
+  transition: ease-in-out 0.2s;
+}
+
+.react-icons:hover {
+  height: 4em;
+  width: 4em;
 }

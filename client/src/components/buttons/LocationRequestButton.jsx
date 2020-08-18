@@ -43,7 +43,8 @@ class LocationRequestButton extends Component {
             }
             onClick={this.requestLocation}
           >
-            1. Click here to enable location access for this app.
+            {this.props.isMobile ? "1." : ""} Click here to enable location
+            access for this app.
           </button>
         </>
       );

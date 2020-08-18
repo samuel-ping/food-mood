@@ -80,6 +80,15 @@ input[type="file"] {
   font-size: 1.1em;
 }
 
+.directions-wrapper-mobile ul {
+  list-style-position: inside;
+  padding-left: 0;
+}
+
+.directions-wrapper-mobile li {
+  list-style-type: none;
+}
+
 .button-wrapper-mobile {
   display: flex;
   align-items: center;

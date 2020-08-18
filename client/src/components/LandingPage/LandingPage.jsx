@@ -6,7 +6,6 @@ import SubmitButton from "../buttons/SubmitButton";
 import Footer from "../Footer";
 import PastaBackground from "../../assets/pasta-basil-landing-background.jpg";
 import MobilePancakeBackground from "../../assets/pasta-basil-landing-background.jpg";
-// import MobilePancakeBackground from "../../assets/pancakes.jpg";
 
 import "./LandingPage.css";
 

@@ -13,7 +13,6 @@ class SubmitButton extends Component {
         return (
           <>
             <label className="submit-button disabled">Submit</label>
-            />
           </>
         );
       } else if (this.props.isEnabled) {

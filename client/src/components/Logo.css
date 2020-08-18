@@ -1,6 +1,6 @@
 #logo {
   color: #ffffff;
-  font-size: 6vw;
+  font-size: 8vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -23,6 +23,17 @@
   animation-duration: 4s;
 }
 
+/* Mobile */
+#logo-mobile {
+  color: #ffffff;
+  font-size: 11vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 0.05em 0.05em black;
+}
+
+/* Browser + Mobile */
 @keyframes colorchange {
   0% {
     color: white;

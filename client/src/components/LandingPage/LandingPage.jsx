@@ -96,7 +96,7 @@ class LandingPage extends Component {
             ), url("${MobilePancakeBackground}")`,
             }}
           >
-            <Logo isNavbarLogo="true" isMobile={this.props.isMobile} />
+            <Logo isMobile={this.props.isMobile} />
             <div className="description-wrapper-mobile">
               <div className="description-mobile">
                 This web application takes your mood from your photo, then
@@ -147,7 +147,7 @@ class LandingPage extends Component {
               ), url("${PastaBackground}")`,
             }}
           >
-            <Logo isNavbarLogo="true" />
+            <Logo />
             <div className="description-wrapper">
               <div className="description">
                 This web application takes your mood from your photo, then

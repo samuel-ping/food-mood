@@ -109,9 +109,7 @@ app.post("/api/upload", (req, res) => {
           open_now: true,
         })
         .then((response) => {
-          const restaurantData = JSON.parse(
-            JSON.stringify(response.jsonBody.businesses[0])
-          );
+          const restaurantData = JSON.parse(JSON.stringify(response.jsonBody));
 
           // hoping to return data in the following format:
           //returnData = {
@@ -125,16 +123,55 @@ app.post("/api/upload", (req, res) => {
           //            latitude:
           //            longitude:
           //        }
-          //        address: (location.address1)
+          //        address: {
+          //          street: (location.address1)
+          //          city: (city + , + state + zip)
           //     }
           // ]}
-          const returnData = {
-            status: 200,
-            message: "Success!",
-            restaurantName: restaurantData.name,
-            restaurantLocation: restaurantData.location,
-            mood: finalEmotion,
+
+          // Filtering Yelp's JSON response for what we need
+          var returnData = { mood: finalEmotion, restaurants: [] };
+          var currentBusiness = {};
+          var currentRestaurantData = {
+            name: "",
+            id: "",
+            url: "",
+            image_url: "",
+            coordinates: { latitude: "", longitude: "" },
+            address: { street: "", city: "" },
           };
+
+          for (var i = 0; i < restaurantData.businesses.length; i++) {
+            currentBusiness = restaurantData.businesses[i];
+
+            currentRestaurantData.name = currentBusiness.name;
+            currentRestaurantData.id = currentBusiness.id;
+            currentRestaurantData.url = currentBusiness.url;
+            currentRestaurantData.image_url = currentBusiness.image_url;
+            currentRestaurantData.coordinates = currentBusiness.coordinates;
+            currentRestaurantData.address.street =
+              currentBusiness.location.address1;
+            currentRestaurantData.address.city = currentBusiness.location.city.concat(
+              ", ",
+              currentBusiness.location.state,
+              currentBusiness.location.zip_code
+            );
+
+            returnData.restaurants.push(currentRestaurantData);
+
+            // Must reset this variable! For some reason its values can't be overridden once set.
+            currentRestaurantData = {
+              name: "",
+              id: "",
+              url: "",
+              image_url: "",
+              coordinates: { latitude: "", longitude: "" },
+              address: { street: "", city: "" },
+            };
+          }
+
+          console.log(returnData);
+
           res.json(returnData);
         })
         .catch((e) => {

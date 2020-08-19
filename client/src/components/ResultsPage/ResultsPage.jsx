@@ -26,10 +26,11 @@ class ResultsPage2 extends Component {
       this.props.locationData.latitude,
       this.props.locationData.longitude,
     ];
-    console.log(this.props.resultsData);
+
     const restaurantMarkers = this.props.resultsData.restaurants.map(
       (aRestaurant) => (
         <Marker
+          key={aRestaurant.id}
           position={[
             aRestaurant.coordinates.latitude,
             aRestaurant.coordinates.longitude,
@@ -46,13 +47,25 @@ class ResultsPage2 extends Component {
           <Logo />
           <div className="results-section">
             <div className="results-mood-wrapper">
-              You appear to be {this.props.resultsData.mood.toLowerCase()}
+              You appear to be{" "}
+              <span className="bold">
+                {this.props.resultsData.mood.toLowerCase()}
+              </span>
+              {/* If mood is happy or surprised, end with exclamation point. Or else, end with a period. */}
+              {this.props.resultsData.mood.localeCompare("HAPPY") === 0 ||
+              this.props.resultsData.mood.localeCompare("SURPRISED") === 0
+                ? "!"
+                : "."}
+            </div>
+            <div className="results-top-choice-wrapper">
+              Your top restaurant suggestion is{" "}
+              {this.props.resultsData.restaurants[0].name}.
             </div>
             <div id="leaflet-map">
               <LeafletMap
                 center={userLocation}
-                zoom={8}
-                style={{ height: "70vh", width: "800px" }}
+                zoom={12}
+                style={{ height: "70vh", width: "90vw" }}
               >
                 <TileLayer
                   attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'

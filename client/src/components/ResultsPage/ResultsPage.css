@@ -9,14 +9,22 @@
 
 .results-section {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
 }
 
 .results-mood-wrapper {
-  display: flex;
-  flex-direction: column;
+  font-size: 25px;
+  margin-bottom: 1vh;
+}
+
+.bold {
+  font-weight: bolder;
+}
+
+.results-top-choice-wrapper {
+  margin-bottom: 2vh;
 }
 
 #leaflet-map {

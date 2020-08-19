@@ -26,7 +26,7 @@ class ResultsPage2 extends Component {
       this.props.locationData.latitude,
       this.props.locationData.longitude,
     ];
-    console.log(this.props.resultsData);
+
     const restaurantMarkers = this.props.resultsData.restaurants.map(
       (aRestaurant) => (
         <Marker

@@ -128,7 +128,7 @@ class LandingPage extends Component {
                 isLoading={this.state.loadingResults}
               />
             </div>
-            <Footer />
+            <Footer isMobile={this.props.isMobile} />
           </div>
         </>
       );

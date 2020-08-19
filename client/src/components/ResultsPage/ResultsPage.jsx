@@ -75,7 +75,7 @@ class ResultsPage2 extends Component {
               </LeafletMap>
             </div>
           </div>
-          <Footer />
+          <Footer isMobile={this.props.isMobile} />
         </div>
       </>
     );

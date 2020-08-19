@@ -49,24 +49,22 @@ class LandingPage extends Component {
         .then((response) => {
           // Formats returned data and send it back to parent
           const returnJSON = JSON.parse(JSON.stringify(response));
-          const status = returnJSON.data.status;
 
-          const returnToParentData = {
-            mood: returnJSON.data.mood,
-            restaurantName: returnJSON.data.restaurantName,
-            restaurantLocation: returnJSON.data.restaurantLocation,
-          };
+          // const returnToParentData = {
+          //   mood: returnJSON.data.mood,
+          //   restaurantName: returnJSON.data.restaurantName,
+          //   restaurantLocation: returnJSON.data.restaurantLocation,
+          // };
 
-          this.setState({
-            resultsData: returnToParentData,
-            loadingResults: false,
-          });
+          // this.setState({
+          //   resultsData: returnToParentData,
+          //   loadingResults: false,
+          // });
 
-          this.props.onDataRetrieval(returnToParentData);
+          this.props.onDataRetrieval(returnJSON.data);
         })
         .catch((error) => {
-          var alertMessage = error.response.statusText;
-          console.log(alertMessage);
+          console.log(error);
         });
     });
   };

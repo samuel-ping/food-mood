@@ -15,14 +15,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      // locationData: { isShared: false, longitude: "", latitude: "" },
-      // resultsData: "",
-      // for testing
-      locationData: {
-        isShared: true,
-        longitude: "-74.676580",
-        latitude: "40.304882",
-      },
+      locationData: { isShared: false, longitude: "", latitude: "" },
       resultsData: "",
     };
     this.setLocationData = this.setLocationData.bind(this);
@@ -34,13 +27,9 @@ class App extends Component {
   };
 
   // When the data from backend is retrieved, it is sent to this component and this method sets the state to the data.
-  // resultsData: {
-  //   mood:
-  //   restaurantName:
-  // }
   handleDataRetrieval = (resultsData) => {
     this.setState({ resultsData: resultsData });
-    history.push(`/results`);
+    history.push(`/results-test`);
   };
 
   render() {
@@ -52,7 +41,10 @@ class App extends Component {
               <ResultsPage resultsData={this.state.resultsData} />
             </Route>
             <Route path="/results-test">
-              <ResultsPage2 locationData={this.state.locationData} />
+              <ResultsPage2
+                locationData={this.state.locationData}
+                resultsData={this.state.resultsData}
+              />
             </Route>
             <Route path="/">
               <LandingPage

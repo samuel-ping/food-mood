@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import { Map as LeafletMap, Marker, Popup, TileLayer } from "react-leaflet";
-import Logo from "../Logo";
-import Footer from "../Footer";
+import Logo from "components/layout/Logo";
+import Footer from "components/layout/Footer";
+
 import "leaflet/dist/leaflet.css";
-import "./ResultsPage.css";
+import "pages/ResultsPage.css";
 
 import L from "leaflet";
 

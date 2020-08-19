@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Loader from "react-spinners/ClipLoader";
-import "../LandingPage/LandingPage.css";
+
+import "components/buttons/Buttons.css";
 
 class SubmitButton extends Component {
   sendBackPhoto = (e) => {

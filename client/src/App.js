@@ -7,13 +7,22 @@ import ResultsPage from "./components/ResultsPage/ResultsPage";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+import ResultsPage2 from "./components/ResultsPage/ResultsPage2";
+
 const history = createBrowserHistory();
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      locationData: { isShared: false, longitude: "", latitude: "" },
+      // locationData: { isShared: false, longitude: "", latitude: "" },
+      // resultsData: "",
+      // for testing
+      locationData: {
+        isShared: true,
+        longitude: "-74.676580",
+        latitude: "40.304882",
+      },
       resultsData: "",
     };
     this.setLocationData = this.setLocationData.bind(this);
@@ -41,6 +50,9 @@ class App extends Component {
           <Switch>
             <Route path="/results">
               <ResultsPage resultsData={this.state.resultsData} />
+            </Route>
+            <Route path="/results-test">
+              <ResultsPage2 locationData={this.state.locationData} />
             </Route>
             <Route path="/">
               <LandingPage

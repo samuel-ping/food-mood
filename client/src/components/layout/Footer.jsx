@@ -1,10 +1,11 @@
 import React from "react";
-import "./Footer.css";
 import { IconContext } from "react-icons";
 import {
   AiFillGithub as GithubIcon,
   AiFillLinkedin as LinkedInIcon,
 } from "react-icons/ai";
+
+import "components/layout/Footer.css";
 
 const Footer = (props) => {
   return (

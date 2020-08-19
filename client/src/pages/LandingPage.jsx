@@ -1,13 +1,12 @@
 import React, { Component } from "react";
 import axios from "axios";
-import Logo from "../Logo";
-import LocationRequestButton from "../buttons/LocationRequestButton";
-import SubmitButton from "../buttons/SubmitButton";
-import Footer from "../Footer";
-import PastaBackground from "../../assets/pasta-basil-landing-background.jpg";
-import MobilePancakeBackground from "../../assets/pasta-basil-landing-background.jpg";
+import Logo from "components/layout/Logo";
+import LocationRequestButton from "components/buttons/LocationRequestButton";
+import SubmitButton from "components/buttons/SubmitButton";
+import Footer from "components/layout/Footer";
+import PastaBackground from "assets/pasta-basil-landing-background.jpg";
 
-import "./LandingPage.css";
+import "pages/LandingPage.css";
 
 class LandingPage extends Component {
   constructor(props) {
@@ -90,7 +89,7 @@ class LandingPage extends Component {
               backgroundImage: `linear-gradient(
               rgba(0, 0, 0, 0.529),
               rgba(0, 0, 0, 0.529)
-            ), url("${MobilePancakeBackground}")`,
+            ), url("${PastaBackground}")`,
             }}
           >
             <Logo isMobile={this.props.isMobile} />

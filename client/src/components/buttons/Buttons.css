@@ -1,0 +1,58 @@
+.submit-button {
+  font-family: "Open Sans";
+  border-width: 3px;
+  padding: 4vh 5vw;
+  transition-duration: 0.3s;
+}
+
+.submit-button:hover {
+  background-color: #ffffff;
+  color: #000000;
+  cursor: pointer;
+}
+
+.active {
+  color: #ffffff;
+  border-style: solid;
+  border-color: #ffffff;
+}
+
+.disabled {
+  color: #737373;
+  border-style: solid;
+  border-color: #737373;
+}
+
+.disabled:hover {
+  background-color: transparent;
+  color: #737373;
+  cursor: default;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+/* Mobile */
+button.location-share-button-mobile {
+  font-size: 1em;
+}
+
+.submit-button-mobile {
+  font-size: 1.2em;
+  font-family: "Open Sans";
+  border-width: 3px;
+  padding: 4vh 20vw;
+  transition-duration: 0.3s;
+}
+
+.submit-button-mobile:hover {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.disabled:hover {
+  background-color: transparent;
+  color: #737373;
+  cursor: default;
+}

@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import { Router, Switch, Route } from "react-router-dom";
 import { createBrowserHistory } from "history";
 import { isMobile } from "react-device-detect";
-import LandingPage from "./components/LandingPage/LandingPage";
-import ResultsPage from "./components/ResultsPage/ResultsPage";
+import LandingPage from "pages/LandingPage";
+import ResultsPage from "pages/ResultsPage";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 

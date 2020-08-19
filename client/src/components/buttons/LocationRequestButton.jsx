@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import "../LandingPage/LandingPage.css";
+
+import "components/buttons/Buttons.css";
 
 class LocationRequestButton extends Component {
   constructor(props) {

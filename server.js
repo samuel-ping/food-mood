@@ -105,14 +105,29 @@ app.post("/api/upload", (req, res) => {
           term: searchTerm,
           latitude: latitude,
           longitude: longitude,
-          limit: 1,
+          limit: 10,
           open_now: true,
         })
         .then((response) => {
-          // Retrieves the top result restaurant's name.
           const restaurantData = JSON.parse(
             JSON.stringify(response.jsonBody.businesses[0])
           );
+
+          // hoping to return data in the following format:
+          //returnData = {
+          // restaurants: [
+          //    {
+          //        name:
+          //        id: // for key in array
+          //        url:
+          //        image_url:
+          //        coordinates: {
+          //            latitude:
+          //            longitude:
+          //        }
+          //        address: (location.address1)
+          //     }
+          // ]}
           const returnData = {
             status: 200,
             message: "Success!",

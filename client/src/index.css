@@ -12,12 +12,26 @@ html {
 .react-icons {
   color: #ffffff;
   vertical-align: middle;
+  height: 1.5em;
+  width: 1.5em;
+  transition: ease-in-out 0.2s;
+}
+
+.react-icons:hover {
+  height: 2em;
+  width: 2em;
+}
+
+/* Mobile */
+.react-icons-mobile {
+  color: #ffffff;
+  vertical-align: middle;
   height: 3em;
   width: 3em;
   transition: ease-in-out 0.2s;
 }
 
-.react-icons:hover {
+.react-icons-mobile:hover {
   height: 4em;
   width: 4em;
 }

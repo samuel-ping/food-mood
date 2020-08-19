@@ -2,7 +2,7 @@
   color: #ffffff;
   font-family: "Open Sans";
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -10,4 +10,5 @@
 
 .my-information {
   font-size: 14px;
+  margin-bottom: 0.5vh;
 }

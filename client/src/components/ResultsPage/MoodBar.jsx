@@ -2,10 +2,6 @@ import React, { Component } from "react";
 import "./MoodBar.css";
 
 class MoodBar extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <div className="mood-bar-wrapper">

@@ -7,6 +7,8 @@ import ResultsPage from "./components/ResultsPage/ResultsPage";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+import ResultsPage2 from "./components/ResultsPage/ResultsPage2";
+
 const history = createBrowserHistory();
 
 class App extends Component {
@@ -25,13 +27,9 @@ class App extends Component {
   };
 
   // When the data from backend is retrieved, it is sent to this component and this method sets the state to the data.
-  // resultsData: {
-  //   mood:
-  //   restaurantName:
-  // }
   handleDataRetrieval = (resultsData) => {
     this.setState({ resultsData: resultsData });
-    history.push(`/results`);
+    history.push(`/results-test`);
   };
 
   render() {
@@ -41,6 +39,12 @@ class App extends Component {
           <Switch>
             <Route path="/results">
               <ResultsPage resultsData={this.state.resultsData} />
+            </Route>
+            <Route path="/results-test">
+              <ResultsPage2
+                locationData={this.state.locationData}
+                resultsData={this.state.resultsData}
+              />
             </Route>
             <Route path="/">
               <LandingPage

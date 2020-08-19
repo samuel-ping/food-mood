@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import Background from "../Background/Background";
 import Navbar from "../Navbar";
 import RestaurantList from "./RestaurantList";
-import Map from "./Map";
 import MoodBar from "./MoodBar";
 import "./ResultsPage.css";
 

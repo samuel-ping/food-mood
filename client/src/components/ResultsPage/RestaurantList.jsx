@@ -3,9 +3,6 @@ import AddressList from "./AddressList";
 import "./RestaurantList.css";
 
 class RestaurantList extends Component {
-  constructor(props) {
-    super(props);
-  }
   render() {
     return (
       <div id="restaurant-list-wrapper">

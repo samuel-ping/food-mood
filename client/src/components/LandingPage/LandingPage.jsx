@@ -6,7 +6,6 @@ import SubmitButton from "../buttons/SubmitButton";
 import Footer from "../Footer";
 import PastaBackground from "../../assets/pasta-basil-landing-background.jpg";
 import MobilePancakeBackground from "../../assets/pasta-basil-landing-background.jpg";
-// import MobilePancakeBackground from "../../assets/pancakes.jpg";
 
 import "./LandingPage.css";
 
@@ -50,24 +49,22 @@ class LandingPage extends Component {
         .then((response) => {
           // Formats returned data and send it back to parent
           const returnJSON = JSON.parse(JSON.stringify(response));
-          const status = returnJSON.data.status;
 
-          const returnToParentData = {
-            mood: returnJSON.data.mood,
-            restaurantName: returnJSON.data.restaurantName,
-            restaurantLocation: returnJSON.data.restaurantLocation,
-          };
+          // const returnToParentData = {
+          //   mood: returnJSON.data.mood,
+          //   restaurantName: returnJSON.data.restaurantName,
+          //   restaurantLocation: returnJSON.data.restaurantLocation,
+          // };
 
-          this.setState({
-            resultsData: returnToParentData,
-            loadingResults: false,
-          });
+          // this.setState({
+          //   resultsData: returnToParentData,
+          //   loadingResults: false,
+          // });
 
-          this.props.onDataRetrieval(returnToParentData);
+          this.props.onDataRetrieval(returnJSON.data);
         })
         .catch((error) => {
-          var alertMessage = error.response.statusText;
-          console.log(alertMessage);
+          console.log(error);
         });
     });
   };
@@ -96,7 +93,7 @@ class LandingPage extends Component {
             ), url("${MobilePancakeBackground}")`,
             }}
           >
-            <Logo isNavbarLogo="true" isMobile={this.props.isMobile} />
+            <Logo isMobile={this.props.isMobile} />
             <div className="description-wrapper-mobile">
               <div className="description-mobile">
                 This web application takes your mood from your photo, then
@@ -147,7 +144,7 @@ class LandingPage extends Component {
               ), url("${PastaBackground}")`,
             }}
           >
-            <Logo isNavbarLogo="true" />
+            <Logo />
             <div className="description-wrapper">
               <div className="description">
                 This web application takes your mood from your photo, then

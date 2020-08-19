@@ -144,6 +144,7 @@ class App extends Component {
       //     },
       //   ],
       // },
+      // END TEST DATA
     };
     this.setLocationData = this.setLocationData.bind(this);
     this.handleDataRetrieval = this.handleDataRetrieval.bind(this);

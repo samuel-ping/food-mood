@@ -6,13 +6,14 @@ import Map from "components/map/Map";
 import Footer from "components/layout/Footer";
 
 const ResultsPage = (props) => {
+  const resultsData = JSON.parse(localStorage.getItem("resultsData"));
   const userLocation = [
-    props.locationData.latitude,
-    props.locationData.longitude,
+    localStorage.getItem("latitude"),
+    localStorage.getItem("longitude"),
   ];
 
   // creating list of markers for map
-  const restaurantMarkers = props.resultsData.restaurants.map((aRestaurant) => (
+  const restaurantMarkers = resultsData.restaurants.map((aRestaurant) => (
     <Marker
       key={aRestaurant.id}
       position={[
@@ -38,16 +39,15 @@ const ResultsPage = (props) => {
         <div className="results-section">
           <div className="results-mood-wrapper">
             You appear to be{" "}
-            <span className="bold">{props.resultsData.mood.toLowerCase()}</span>
+            <span className="bold">{resultsData.mood.toLowerCase()}</span>
             {/* If mood is happy or surprised, end with exclamation point. Or else, end with a period. */}
-            {props.resultsData.mood.localeCompare("HAPPY") === 0 ||
-            props.resultsData.mood.localeCompare("SURPRISED") === 0
+            {resultsData.mood.localeCompare("HAPPY") === 0 ||
+            resultsData.mood.localeCompare("SURPRISED") === 0
               ? "!"
               : "."}
           </div>
           <div className="results-top-choice-wrapper">
-            Your top restaurant suggestion is{" "}
-            {props.resultsData.restaurants[0].name}.
+            Your top restaurant suggestion is {resultsData.restaurants[0].name}.
           </div>
           <Map center={userLocation} markerList={restaurantMarkers} />
         </div>

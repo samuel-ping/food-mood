@@ -2,9 +2,11 @@
 
 Food Mood is a web application that uses your current location and selfie to suggest a nearby restaurant!
 
+##### Current Stack: React, Express, Node, hosted on EC2 using Nginx
+
 ### Food Mood v3
 
-I'm once again revamping Food Mood! I'm planning to go serverless by using an AWS Lambda function rather than hosting a whole server to make the API calls. I'm also making it look better! I hope!
+I'm once again revamping Food Mood! I'm planning to go serverless by using an AWS Lambda function rather than hosting a whole server to make the API calls. I'm also making it look better.
 
 ### Food Mood v2
 

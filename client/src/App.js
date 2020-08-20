@@ -32,7 +32,7 @@ class App extends Component {
       //       image_url:
       //         "https://s3-media2.fl.yelpcdn.com/bphoto/PRAp4veC1qnxduAN8l_tVg/o.jpg",
       //       coordinates: { latitude: 40.35231, longitude: -74.65191 },
-      //       address: { street: "242 Nassau St", city: "Princeton, NJ08542" },
+      //       address: { street: "242 Nassau St", city: "Princeton, NJ 08542" },
       //     },
       //     {
       //       name: "Route 1 Diner Restaurant",
@@ -44,7 +44,7 @@ class App extends Component {
       //       coordinates: { latitude: 40.25136, longitude: -74.7354 },
       //       address: {
       //         street: "2009 US Highway 1",
-      //         city: "Lawrence Township, NJ08648",
+      //         city: "Lawrence Township, NJ 08648",
       //       },
       //     },
       //     {
@@ -55,7 +55,7 @@ class App extends Component {
       //       image_url:
       //         "https://s3-media1.fl.yelpcdn.com/bphoto/gOr3z0mip281BJy74Rr8Dg/o.jpg",
       //       coordinates: { latitude: 40.349139, longitude: -74.665491 },
-      //       address: { street: "20 Bayard Lane", city: "Princeton, NJ08540" },
+      //       address: { street: "20 Bayard Lane", city: "Princeton, NJ 08540" },
       //     },
       //     {
       //       name: "Triumph Brewing Company",
@@ -65,7 +65,7 @@ class App extends Component {
       //       image_url:
       //         "https://s3-media2.fl.yelpcdn.com/bphoto/mLKSkFV8fS7Nvs9eYFi8WQ/o.jpg",
       //       coordinates: { latitude: 40.35038, longitude: -74.65817 },
-      //       address: { street: "138 Nassau St", city: "Princeton, NJ08542" },
+      //       address: { street: "138 Nassau St", city: "Princeton, NJ 08542" },
       //     },
       //     {
       //       name: "Alchemist & Barrister",
@@ -91,7 +91,7 @@ class App extends Component {
       //       image_url:
       //         "https://s3-media3.fl.yelpcdn.com/bphoto/m4tLweBg6Q7mXHBZ4yNcaw/o.jpg",
       //       coordinates: { latitude: 40.349832, longitude: -74.660858 },
-      //       address: { street: "1 Palmer Sq E", city: "Princeton, NJ08542" },
+      //       address: { street: "1 Palmer Sq E", city: "Princeton, NJ 08542" },
       //     },
       //     {
       //       name: "Wawa",
@@ -104,7 +104,10 @@ class App extends Component {
       //         latitude: 40.2281743260925,
       //         longitude: -74.6648954227567,
       //       },
-      //       address: { street: "1200 State Hwy 33", city: "Hamilton, NJ08690" },
+      //       address: {
+      //         street: "1200 State Hwy 33",
+      //         city: "Hamilton, NJ 08690",
+      //       },
       //     },
       //     {
       //       name: "JoJo's Tavern",
@@ -116,7 +119,7 @@ class App extends Component {
       //       coordinates: { latitude: 40.236134, longitude: -74.68877 },
       //       address: {
       //         street: "2677 Nottingham Way",
-      //         city: "Trenton, NJ08619",
+      //         city: "Trenton, NJ 08619",
       //       },
       //     },
       //     {
@@ -130,7 +133,10 @@ class App extends Component {
       //         latitude: 40.2478523644738,
       //         longitude: -74.7677541976538,
       //       },
-      //       address: { street: "1730 N. Olden Ave.", city: "Trenton, NJ08638" },
+      //       address: {
+      //         street: "1730 N. Olden Ave.",
+      //         city: "Trenton, NJ 08638",
+      //       },
       //     },
       //     {
       //       name: "Ivy Inn",
@@ -140,7 +146,7 @@ class App extends Component {
       //       image_url:
       //         "https://s3-media2.fl.yelpcdn.com/bphoto/Y73-Iq_DTfzFcrtYQ2-IhQ/o.jpg",
       //       coordinates: { latitude: 40.35237, longitude: -74.65152 },
-      //       address: { street: "248 Nassau St", city: "Princeton, NJ08542" },
+      //       address: { street: "248 Nassau St", city: "Princeton, NJ 08542" },
       //     },
       //   ],
       // },

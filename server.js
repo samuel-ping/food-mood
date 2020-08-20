@@ -83,7 +83,6 @@ app.post("/api/upload", (req, res) => {
         status: 400,
         message: "Your uploaded photo did not contain a face to analyze.",
       };
-      console.log("GKERNWGKRENKRLEERROR GERORFEEROR");
       res.json(returnData);
     } else {
       const numPeople = data.FaceDetails.length;

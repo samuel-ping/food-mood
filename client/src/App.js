@@ -158,11 +158,14 @@ class App extends Component {
 
   setLocationData = (locationData) => {
     this.setState({ locationData: locationData });
+    localStorage.setItem("latitude", locationData.latitude);
+    localStorage.setItem("longitude", locationData.longitude);
   };
 
   // When the data from backend is retrieved, it is sent to this component and this method sets the state to the data.
   handleDataRetrieval = (resultsData) => {
     this.setState({ resultsData: resultsData });
+    localStorage.setItem("resultsData", JSON.stringify(resultsData));
     history.push(`/results`);
   };
 

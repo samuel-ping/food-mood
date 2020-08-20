@@ -125,6 +125,7 @@ app.post("/api/upload", (req, res) => {
           //    {
           //        name:
           //        id: // for key in array
+          //        categories: [{alias: "", title: ""},{...}]
           //        url:
           //        image_url:
           //        coordinates: {

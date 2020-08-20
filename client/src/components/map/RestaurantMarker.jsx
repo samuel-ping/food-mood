@@ -16,7 +16,12 @@ const RestaurantMarker = (props) => {
   return (
     <>
       <Popup minWidth="250" maxHeight="auto">
-        <a className="restaurant-marker-wrapper" href={props.url}>
+        <a
+          className="restaurant-marker-wrapper"
+          href={props.url}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <div className="restaurant-market-left">
             <img
               className="restaurant-marker-image"

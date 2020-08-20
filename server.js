@@ -135,6 +135,7 @@ app.post("/api/upload", (req, res) => {
           var currentRestaurantData = {
             name: "",
             id: "",
+            categories: {},
             url: "",
             image_url: "",
             coordinates: { latitude: "", longitude: "" },
@@ -146,6 +147,7 @@ app.post("/api/upload", (req, res) => {
 
             currentRestaurantData.name = currentBusiness.name;
             currentRestaurantData.id = currentBusiness.id;
+            currentRestaurantData.categories = currentBusiness.categories;
             currentRestaurantData.url = currentBusiness.url;
             currentRestaurantData.image_url = currentBusiness.image_url;
             currentRestaurantData.coordinates = currentBusiness.coordinates;
@@ -154,6 +156,7 @@ app.post("/api/upload", (req, res) => {
             currentRestaurantData.address.city = currentBusiness.location.city.concat(
               ", ",
               currentBusiness.location.state,
+              " ",
               currentBusiness.location.zip_code
             );
 
@@ -163,14 +166,13 @@ app.post("/api/upload", (req, res) => {
             currentRestaurantData = {
               name: "",
               id: "",
+              categories: "",
               url: "",
               image_url: "",
               coordinates: { latitude: "", longitude: "" },
               address: { street: "", city: "" },
             };
           }
-
-          console.log(returnData);
 
           res.json(returnData);
         })

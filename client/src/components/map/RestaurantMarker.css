@@ -1,0 +1,31 @@
+.restaurant-marker-wrapper {
+  display: flex;
+  flex-direction: row;
+  font-family: "Open Sans", sans-serif;
+  text-decoration: none;
+}
+
+.restaurant-marker-wrapper:link {
+  color: #000000;
+}
+
+.restaurant-marker-image {
+  height: 10vh;
+  width: auto;
+}
+
+.restaurant-marker-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin-left: 0.2vw;
+}
+
+.restaurant-marker-name {
+  font-size: 1.3em;
+  font-weight: bolder;
+}
+
+.restaurant-marker-categories {
+  color: #5c5c5c;
+}

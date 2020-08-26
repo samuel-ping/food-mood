@@ -7,7 +7,8 @@ Food Mood is a web application that uses your current location and selfie to sug
 ### Food Mood v3
 
 | ![version 3, view1](./screenshots/food-mood-v3-screenshot1.png) |
-| _Landing Page_ |
+| :-------------------------------------------------------------: |
+|                         _Landing Page_                          |
 
 ![version 3, view2](./screenshots/food-mood-v3-screenshot2.png)
 _Results Page_

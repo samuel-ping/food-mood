@@ -12,9 +12,7 @@ Food Mood is a web application that uses your current location and selfie to sug
 
 | ![version 3, view2](./screenshots/food-mood-v3-screenshot2.png) |
 | :-------------------------------------------------------------: |
-
-
-| _Results Page_
+|                         _Results Page_                          |
 
 I'm once again revamping Food Mood! I'm planning to go serverless by using an AWS Lambda function rather than hosting a whole server to make the API calls. I'm also making it look better.
 

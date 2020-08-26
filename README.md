@@ -6,7 +6,7 @@ Food Mood is a web application that uses your current location and selfie to sug
 
 After submitting an image, the image is sent to Amazon Rekognition, which determines your emotion from the photo. Then, using Yelp's Fusion API, a restaurant is suggested to you based on the emotion!
 
-#### Current Stack: React.js, Express.js, Node.js, hosted on AWS EC2 using Nginx.
+#### Current Stack: React.js, Express.js, Node.js, hosted on an AWS EC2 instance using Nginx.
 
 ## Food Mood v3
 
@@ -18,7 +18,7 @@ After submitting an image, the image is sent to Amazon Rekognition, which determ
 | :-------------------------------------------------------------: |
 |                         _Results Page_                          |
 
-I'm once again revamping Food Mood! I'm planning to go serverless by using an AWS Lambda function rather than hosting a whole server to make the API calls. I'm also making it look better.
+I'm currently revamping Food Mood again! I improved the look of the pages, and added a map to show restaurants and where they're located.
 
 ## Food Mood v2
 

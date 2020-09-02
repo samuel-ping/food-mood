@@ -14,12 +14,11 @@ html {
   vertical-align: middle;
   height: 1.5em;
   width: 1.5em;
-  transition: ease-in-out 0.2s;
+  transition: ease-in-out 0.1s;
 }
 
 .react-icons:hover {
-  height: 2em;
-  width: 2em;
+  opacity: 0.5;
 }
 
 /* Mobile */

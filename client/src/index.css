@@ -27,10 +27,9 @@ html {
   vertical-align: middle;
   height: 3em;
   width: 3em;
-  transition: ease-in-out 0.2s;
+  transition: ease-in-out 0.1;
 }
 
 .react-icons-mobile:hover {
-  height: 4em;
-  width: 4em;
+  opacity: 0.5;
 }

@@ -44,14 +44,14 @@ class LandingPage extends Component {
 
       let config = {
         headers: {
-          "x-api-key": "PBKi2R6ArV9onFw81Qt7f6ThfCn5Z8yk5xkWzHTA", // only made the API key to learn about it, I don't see any big security threats by leaving this out here
+          "x-api-key": "PBKi2R6ArV9onFw81Qt7f6ThfCn5Z8yk5xkWzHTA", // only made the API key to learn about it, there shouldn't be any security issues by putting this here
         },
       };
 
       // Sending data to backend to be processed.
       axios
         .post(
-          "https://8866da91a7.execute-api.us-east-1.amazonaws.com/production/lambda-backend",
+          "https://8866da91a7.execute-api.us-east-1.amazonaws.com/production/foodmood-backend",
           data,
           config
         )

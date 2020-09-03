@@ -16,7 +16,5 @@
     "aws-sdk": "^2.745.0",
     "yelp-fusion": "^3.0.0"
   },
-  "devDependencies": {
-    "claudia": "^5.12.0"
-  }
+  "devDependencies": {}
 }

@@ -1,4 +1,3 @@
-const axios = require("axios");
 const AWS = require("aws-sdk");
 const yelp = require("yelp-fusion");
 
@@ -20,8 +19,9 @@ exports.handler = function (event, context) {
 
   var image = null;
   var jpg = true;
+
   try {
-    image = encodedImage.split("data:image/jpeg;base64,")[1];
+    image = encodedImage.split("data:image/jpeg;base64,")[1]; // Removes the image header information from the base64 string
   } catch (e) {
     jpg = false;
   }
@@ -73,7 +73,7 @@ exports.handler = function (event, context) {
           }
         }
       }
-      const finalEmotion = highestEmotion; // setting the finally determined emotion
+      const finalEmotion = highestEmotion; // Setting the finally determined emotion.
 
       // Sending query to Fusion API with search term: "food " + finalMood.
       const searchTerm = "food ".concat(finalEmotion);
@@ -88,8 +88,8 @@ exports.handler = function (event, context) {
         .then((response) => {
           const restaurantData = JSON.parse(JSON.stringify(response.jsonBody));
 
-          // hoping to return data in the following format:
-          //returnData = {
+          // Return data in the following format:
+          // returnData = {
           // restaurants: [
           //    {
           //        name:
@@ -140,7 +140,7 @@ exports.handler = function (event, context) {
 
             returnData.restaurants.push(currentRestaurantData);
 
-            // Must reset this variable! For some reason its values can't be overridden once set.
+            // Must reset this variable, since for some reason its values can't be overridden once set.
             currentRestaurantData = {
               name: "",
               id: "",
@@ -152,7 +152,6 @@ exports.handler = function (event, context) {
             };
           }
 
-          //   res.json(returnData);
           context.succeed(returnData);
         })
         .catch((e) => {
@@ -161,25 +160,3 @@ exports.handler = function (event, context) {
     }
   });
 };
-
-// const axios = require("axios");
-// const AWS = require("aws-sdk");
-// const yelp = require("yelp-fusion");
-
-// // Setting AWS credentials.
-// AWS.config.region = process.env.AWS_CONFIG_REGION;
-// AWS.config.credentials = new AWS.CognitoIdentityCredentials({
-//   IdentityPoolId: process.env.AWS_CONFIG_IDENTITYPOOLID,
-// });
-
-// // Setting Yelp API key.
-// const client = yelp.client(process.env.YELP_API_KEY);
-
-// const rekognition = new AWS.Rekognition();
-
-// exports.handler = function (event, context) {
-//   const longitude = event.longitude;
-//   const latitude = event.latitude;
-//   //   res.json(returnData);
-//   context.succeed(longitude);
-// };

@@ -157,11 +157,18 @@ exports.handler = (event, context) => {
             };
           }
 
+          const headers = {
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Headers":
+              "Content-Type,X-Amz-Date,X-Amz-Security-Token,Authorization,X-Api-Key,X-Requested-With,Accept,Access-Control-Allow-Methods,Access-Control-Allow-Origin,Access-Control-Allow-Headers",
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Methods": "*",
+            "X-Requested-With": "*",
+          };
+
           let finalReturnData = {
             statusCode: responseCode,
-            headers: {
-              "Content-Type": "application/json",
-            },
+            headers,
             body: JSON.stringify(returnData),
           };
 

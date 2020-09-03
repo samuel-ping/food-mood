@@ -12,10 +12,14 @@ const client = yelp.client(process.env.YELP_API_KEY);
 
 const rekognition = new AWS.Rekognition();
 
-exports.handler = function (event, context) {
-  const longitude = event.longitude;
-  const latitude = event.latitude;
-  const encodedImage = event.encodedImage;
+exports.handler = (event, context) => {
+  let responseCode = 200;
+
+  var retrievedData = JSON.parse(event.body);
+
+  const longitude = retrievedData.longitude;
+  const latitude = retrievedData.latitude;
+  const encodedImage = retrievedData.encodedImage;
 
   var image = null;
   var jpg = true;
@@ -77,6 +81,7 @@ exports.handler = function (event, context) {
 
       // Sending query to Fusion API with search term: "food " + finalMood.
       const searchTerm = "food ".concat(finalEmotion);
+
       client
         .search({
           term: searchTerm,
@@ -152,7 +157,15 @@ exports.handler = function (event, context) {
             };
           }
 
-          context.succeed(returnData);
+          let finalReturnData = {
+            statusCode: responseCode,
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(returnData),
+          };
+
+          context.succeed(finalReturnData);
         })
         .catch((e) => {
           console.log(e);

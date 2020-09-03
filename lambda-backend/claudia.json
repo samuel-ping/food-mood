@@ -1,0 +1,7 @@
+{
+  "lambda": {
+    "role": "lambda-backend-executor",
+    "name": "lambda-backend",
+    "region": "us-east-1"
+  }
+}

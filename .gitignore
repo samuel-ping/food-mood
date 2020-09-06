@@ -1,9 +1,6 @@
 # VSCode Files
 .prettierignore
 
-# General
-.env
-
 # Client
 ## dependencies
 /client/node_modules
@@ -13,5 +10,10 @@
 
 
 # Server
+lambda-backend/production-env.json
+
 ## dependencies
-/node_modules
+lambda-backend/node_modules
+
+## Testing
+lambda-backend/testing

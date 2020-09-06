@@ -42,24 +42,22 @@ class LandingPage extends Component {
         encodedImage: this.state.encodedImage,
       };
 
+      let config = {
+        headers: {
+          "x-api-key": "PBKi2R6ArV9onFw81Qt7f6ThfCn5Z8yk5xkWzHTA", // only made the API key to learn about it, there shouldn't be any security issues by putting this here
+        },
+      };
+
       // Sending data to backend to be processed.
       axios
-        .post("/api/upload", data)
+        .post(
+          "https://8866da91a7.execute-api.us-east-1.amazonaws.com/production/foodmood-backend",
+          data,
+          config
+        )
         .then((response) => {
           // Formats returned data and send it back to parent
           const returnJSON = JSON.parse(JSON.stringify(response));
-
-          // const returnToParentData = {
-          //   mood: returnJSON.data.mood,
-          //   restaurantName: returnJSON.data.restaurantName,
-          //   restaurantLocation: returnJSON.data.restaurantLocation,
-          // };
-
-          // this.setState({
-          //   resultsData: returnToParentData,
-          //   loadingResults: false,
-          // });
-
           this.props.onDataRetrieval(returnJSON.data);
         })
         .catch((error) => {

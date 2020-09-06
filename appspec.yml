@@ -5,9 +5,6 @@ files:
     destination: /var/www/food-mood
 hooks:
   BeforeInstall:
-    - location: scripts/move_env_out.sh
-      timeout: 5
-      runas: root
     - location: scripts/delete_files.sh
       timeout: 600
       runas: root
@@ -15,20 +12,9 @@ hooks:
       timeout: 5
       runas: root
   AfterInstall:
-    - location: scripts/move_env_in.sh
-      timeout: 5
-      runas: root
     - location: scripts/install_dependencies.sh
       timeout: 300
       runas: root
     - location: scripts/run_build.sh
       timeout: 300
-      runas: root
-  ApplicationStart:
-    - location: scripts/start_server.sh
-      timeout: 60
-      runas: root
-  ApplicationStop:
-    - location: scripts/stop_server.sh
-      timeout: 60
       runas: root

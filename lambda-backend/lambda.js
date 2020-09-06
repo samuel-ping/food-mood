@@ -1,32 +1,5 @@
-require("dotenv").config();
-const express = require("express");
-const app = express();
 const AWS = require("aws-sdk");
 const yelp = require("yelp-fusion");
-const cors = require("cors");
-const path = require("path");
-
-app.use(express.static(path.join(__dirname, "client/build")));
-
-// Solution for serving React app with client side routing and user refreshes page
-app.get("/*", function (req, res) {
-  res.sendFile(path.join(__dirname, "client/build/index.html"), function (err) {
-    if (err) {
-      res.status(500).send(err);
-    }
-  });
-});
-
-app.get("/*", function (req, res) {
-  res.sendFile(path.join(__dirname, "client/build"), function (err) {
-    if (err) {
-      res.status(500).send(err);
-    }
-  });
-});
-
-app.use(express.json({ limit: "25mb" })); // limits size of photo input to 25mb
-app.use(cors());
 
 // Setting AWS credentials.
 AWS.config.region = process.env.AWS_CONFIG_REGION;
@@ -37,21 +10,22 @@ AWS.config.credentials = new AWS.CognitoIdentityCredentials({
 // Setting Yelp API key.
 const client = yelp.client(process.env.YELP_API_KEY);
 
-const port = process.env.PORT || 5000;
 const rekognition = new AWS.Rekognition();
 
-app.post("/api/upload", (req, res) => {
-  // Had to use .stringify() before .parse() for it to work for some reason.
-  const sentData = JSON.stringify(req.body);
-  const dataJSON = JSON.parse(sentData);
-  const longitude = dataJSON.longitude;
-  const latitude = dataJSON.latitude;
-  const encodedImage = dataJSON.encodedImage;
+exports.handler = (event, context) => {
+  let responseCode = 200;
+
+  var retrievedData = JSON.parse(event.body);
+
+  const longitude = retrievedData.longitude;
+  const latitude = retrievedData.latitude;
+  const encodedImage = retrievedData.encodedImage;
 
   var image = null;
   var jpg = true;
+
   try {
-    image = encodedImage.split("data:image/jpeg;base64,")[1];
+    image = encodedImage.split("data:image/jpeg;base64,")[1]; // Removes the image header information from the base64 string
   } catch (e) {
     jpg = false;
   }
@@ -59,8 +33,11 @@ app.post("/api/upload", (req, res) => {
     try {
       image = encodedImage.split("data:image/png;base64,")[1];
     } catch (e) {
-      console.log("Not an image file Rekognition can process");
-      return;
+      const returnData = {
+        status: 400,
+        message: "Not an image file Rekognition can process",
+      };
+      context.fail(returnData);
     }
   }
 
@@ -76,14 +53,18 @@ app.post("/api/upload", (req, res) => {
 
   rekognition.detectFaces(params, (err, data) => {
     if (err) {
-      console.log(err, err.stack);
-      console.log("There was an error parsing your photo.");
+      console.log("Error: ", err);
+      const returnData = {
+        status: 500,
+        message: "There was an error parsing your photo.",
+      };
+      context.fail(returnData);
     } else if (data.FaceDetails.length === 0) {
       const returnData = {
         status: 400,
         message: "Your uploaded photo did not contain a face to analyze.",
       };
-      res.json(returnData);
+      context.fail(returnData);
     } else {
       const numPeople = data.FaceDetails.length;
       const EmotionsData = data.FaceDetails[0].Emotions; // Extracting the emotions from faces dataset.
@@ -103,10 +84,11 @@ app.post("/api/upload", (req, res) => {
           }
         }
       }
-      const finalEmotion = highestEmotion; // setting the finally determined emotion
+      const finalEmotion = highestEmotion; // Setting the finally determined emotion.
 
       // Sending query to Fusion API with search term: "food " + finalMood.
       const searchTerm = "food ".concat(finalEmotion);
+
       client
         .search({
           term: searchTerm,
@@ -118,8 +100,8 @@ app.post("/api/upload", (req, res) => {
         .then((response) => {
           const restaurantData = JSON.parse(JSON.stringify(response.jsonBody));
 
-          // hoping to return data in the following format:
-          //returnData = {
+          // Return data in the following format:
+          // returnData = {
           // restaurants: [
           //    {
           //        name:
@@ -170,7 +152,7 @@ app.post("/api/upload", (req, res) => {
 
             returnData.restaurants.push(currentRestaurantData);
 
-            // Must reset this variable! For some reason its values can't be overridden once set.
+            // Must reset this variable, since for some reason its values can't be overridden once set.
             currentRestaurantData = {
               name: "",
               id: "",
@@ -182,13 +164,31 @@ app.post("/api/upload", (req, res) => {
             };
           }
 
-          res.json(returnData);
+          const headers = {
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Headers":
+              "Content-Type,X-Amz-Date,X-Amz-Security-Token,Authorization,X-Api-Key,X-Requested-With,Accept,Access-Control-Allow-Methods,Access-Control-Allow-Origin,Access-Control-Allow-Headers",
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Methods": "*",
+            "X-Requested-With": "*",
+          };
+
+          let finalReturnData = {
+            status: responseCode,
+            headers,
+            body: JSON.stringify(returnData),
+          };
+
+          context.succeed(finalReturnData);
         })
         .catch((e) => {
-          console.log(e);
+          const errMessage = "Error: " + e;
+          const returnData = {
+            status: 500,
+            message: errMessage,
+          };
+          context.fail(returnData);
         });
     }
   });
-});
-
-app.listen(port, () => console.log(`Listening on port ${port}`));
+};

@@ -33,8 +33,11 @@ exports.handler = (event, context) => {
     try {
       image = encodedImage.split("data:image/png;base64,")[1];
     } catch (e) {
-      console.log("Not an image file Rekognition can process");
-      return;
+      const returnData = {
+        status: 400,
+        message: "Not an image file Rekognition can process",
+      };
+      context.fail(returnData);
     }
   }
 
@@ -50,14 +53,18 @@ exports.handler = (event, context) => {
 
   rekognition.detectFaces(params, (err, data) => {
     if (err) {
-      console.log(err, err.stack);
-      console.log("There was an error parsing your photo.");
+      console.log("Error: ", err);
+      const returnData = {
+        status: 500,
+        message: "There was an error parsing your photo.",
+      };
+      context.fail(returnData);
     } else if (data.FaceDetails.length === 0) {
       const returnData = {
         status: 400,
         message: "Your uploaded photo did not contain a face to analyze.",
       };
-      res.json(returnData);
+      context.fail(returnData);
     } else {
       const numPeople = data.FaceDetails.length;
       const EmotionsData = data.FaceDetails[0].Emotions; // Extracting the emotions from faces dataset.
@@ -167,7 +174,7 @@ exports.handler = (event, context) => {
           };
 
           let finalReturnData = {
-            statusCode: responseCode,
+            status: responseCode,
             headers,
             body: JSON.stringify(returnData),
           };
@@ -175,7 +182,12 @@ exports.handler = (event, context) => {
           context.succeed(finalReturnData);
         })
         .catch((e) => {
-          console.log(e);
+          const errMessage = "Error: " + e;
+          const returnData = {
+            status: 500,
+            message: errMessage,
+          };
+          context.fail(returnData);
         });
     }
   });

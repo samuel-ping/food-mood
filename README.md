@@ -18,6 +18,10 @@ I migrated the Express.js backend to AWS Lambda, and migrated the website from a
 
 #### Stack used: React.js, AWS Lambda - Node.js, hosted on AWS Amplify.
 
+## Food Mood v2.5
+
+To introduce myself to AWS S3, I deployed this app in a public AWS S3 bucket, and delivered it via AWS Cloudfront for a day.
+
 ## Food Mood v2
 
 #### Browse the repo: https://github.com/samuel-ping/food-mood/commit/60ea27ea983de19a43d2be7f0c18a49e1dd5698e

@@ -18,6 +18,8 @@ I migrated the Express.js backend to AWS Lambda, and migrated the website from a
 
 #### Stack used: React.js, AWS Lambda - Node.js, hosted on AWS Amplify.
 
+##### Other technologies used: AWS API Gateway.
+
 ## Food Mood v2.5
 
 To introduce myself to AWS S3, I deployed this app in a public AWS S3 bucket, and delivered it via AWS Cloudfront for a day.
@@ -33,6 +35,8 @@ To introduce myself to AWS S3, I deployed this app in a public AWS S3 bucket, an
 After the challenge ended, I decided to continue improving this project. I rebuilt this web app with React.js, Node.js and Express.js. It's an ERN stack! Since the free tier of Heroku is so slow, I manually deployed this app through an AWS EC2 instance using Nginx as a reverse proxy, and set up the security certificate that automatically renews itself. I also set up an AWS CodePipeline that automatically deploys changes to the live website using AWS CodeDeploy.
 
 #### Stack used: React.js, Express.js, Node.js, hosted on AWS EC2 using Nginx.
+
+##### Other technologies used: AWS CodePipeline & CodeDeploy.
 
 ## Food Mood v1
 

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { toast } from "react-toastify";
 import Logo from "components/layout/Logo";
 import LocationRequestButton from "components/buttons/LocationRequestButton";
 import SubmitButton from "components/buttons/SubmitButton";
@@ -7,6 +8,16 @@ import Footer from "components/layout/Footer";
 import PastaBackground from "assets/pasta-basil-landing-background.jpg";
 
 import "pages/LandingPage.css";
+
+const toastConfig = {
+  position: "bottom-center",
+  autoClose: false,
+  hideProgressBar: true,
+  closeOnClick: true,
+  pauseOnHover: true,
+  draggable: true,
+  progress: undefined,
+};
 
 class LandingPage extends Component {
   constructor(props) {
@@ -27,7 +38,6 @@ class LandingPage extends Component {
 
   handleImageSubmission = (imageSubmission) => {
     this.setState({ loadingResults: true });
-
     const image = imageSubmission;
 
     this.getBase64(image, (result) => {
@@ -61,7 +71,8 @@ class LandingPage extends Component {
           this.props.onDataRetrieval(returnJSON.data);
         })
         .catch((error) => {
-          console.log(error);
+          toast.error(error.message, toastConfig);
+          this.setState({ loadingResults: false });
         });
     });
   };
@@ -73,7 +84,8 @@ class LandingPage extends Component {
       cb(reader.result);
     };
     reader.onerror = function (error) {
-      console.log("Error in converting file to base64: ", error);
+      const theError = ("Error in converting file to base64: ", error);
+      toast.error(theError, toastConfig);
     };
   }
 

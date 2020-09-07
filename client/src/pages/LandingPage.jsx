@@ -71,7 +71,11 @@ class LandingPage extends Component {
           this.props.onDataRetrieval(returnJSON.data);
         })
         .catch((error) => {
-          toast.error(error.message, toastConfig);
+          console.log(error.message);
+          toast.error(
+            "There was an error parsing your photo. Be sure to use either a JPG or PNG image of an actual person/people!",
+            toastConfig
+          );
           this.setState({ loadingResults: false });
         });
     });
@@ -86,6 +90,7 @@ class LandingPage extends Component {
     reader.onerror = function (error) {
       const theError = ("Error in converting file to base64: ", error);
       toast.error(theError, toastConfig);
+      this.setState({ loadingResults: false });
     };
   }
 

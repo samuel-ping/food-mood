@@ -190,7 +190,15 @@ class App extends Component {
             </Route>
           </Switch>
         </Router>
-        <ToastContainer />
+        <ToastContainer
+          position="bottom-center"
+          autoClose={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+        />
       </>
     );
   }

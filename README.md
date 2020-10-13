@@ -6,7 +6,8 @@ Food Mood is a web application that detects your mood from your selfie to sugges
 
 After submitting an image, the image is sent to Amazon Rekognition, which determines your emotion from the photo. Then, using Yelp's Fusion API, a restaurant is suggested to you based on the emotion!
 
-#### Technologies I used and learned about throughout this project: React.js, HTML, CSS, JavaScript, Express.js, Node.js, Website Hosting/Deployment, Continuous Integration/Deployment, Nginx, AWS EC2, AWS CodePipeline, AWS CodeDeploy, AWS Lambda, AWS API Gateway, AWS S3, & AWS Amplify.
+#### Technologies I used and learned about throughout this project:
+React.js, HTML, CSS, JavaScript, Express.js, Node.js, Website Hosting/Deployment, Continuous Integration/Deployment, Nginx, AWS EC2, AWS CodePipeline, AWS CodeDeploy, AWS Lambda, AWS API Gateway, AWS S3, & AWS Amplify.
 
 ## Story:
 

@@ -13,7 +13,7 @@
   "author": "Samuel Ping",
   "license": "ISC",
   "dependencies": {
-    "aws-sdk": "^2.814.0",
+    "aws-sdk": "^2.1354.0",
     "yelp-fusion": "^3.0.0"
   },
   "devDependencies": {}
